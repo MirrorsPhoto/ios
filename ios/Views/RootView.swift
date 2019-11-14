@@ -19,6 +19,7 @@ struct RootView: View {
                 AuthView(sessionManager: sessionManager)
             }
         }
+        .padding()
     }
 }
 

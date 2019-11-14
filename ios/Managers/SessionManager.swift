@@ -15,10 +15,8 @@ class SessionManager : ObservableObject {
         self.isLogin = isLogin
     }
     
-    func signIn() -> String {
+    func signIn() {
         self.isLogin = true
-        
-        return "123213"
     }
     
     func logOut() {

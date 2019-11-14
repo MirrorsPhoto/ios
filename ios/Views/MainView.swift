@@ -13,15 +13,20 @@ struct MainView: View {
     @ObservedObject var sessionManager: SessionManager
     
     var body: some View {
-        VStack {
-            Text("MAIN")
-            Button(action: logOut) {
-                Text("Log out")
+        NavigationView {
+            VStack {
+                Text("token is \(UserDefaults.standard.string(forKey: "token")!)")
+                Button(action: {
+                    self.logOut()
+                }) {
+                    Text("Logout")
+                }
             }
+            .navigationBarTitle(Text("Dashboard"))
         }
     }
     
-    func logOut () {
+    func logOut() {
         sessionManager.logOut()
         UserDefaults.standard.removeObject(forKey: "token")
     }
