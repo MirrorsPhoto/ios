@@ -27,9 +27,11 @@ struct AuthView: View {
                     .keyboardType(UIKeyboardType.alphabet)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .textContentType(UITextContentType.username)
                 SecureField("Password", text: $password)
                     .keyboardType(UIKeyboardType.alphabet)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(UITextContentType.password)
                 Spacer()
                 Button(action: {
                     self.signIn()
