@@ -17,7 +17,9 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text(verbatim: sessionManager.user!.username)
+                Spacer()
+                Text("Total cash: \(String(sessionManager.totalCash ?? 0))")
+                Text("Total client: \(String(sessionManager.totalClient ?? 0))")
                 Spacer()
                 Button(action: {
                     self.logOut()
