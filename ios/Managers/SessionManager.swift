@@ -25,8 +25,6 @@ class SessionManager : ObservableObject, WebSocketDelegate {
             return
         }
         
-        self.token = token!
-        
         setToken(token: token!)
         initSocket(token: token!)
     }
@@ -38,7 +36,7 @@ class SessionManager : ObservableObject, WebSocketDelegate {
     
     func logOut() {
         self.isLogin = false
-        self.user = nil
+//        self.user = nil
         closeSocket()
     }
     
@@ -47,6 +45,7 @@ class SessionManager : ObservableObject, WebSocketDelegate {
         
         self.user = User(data: jwt?.body)
         self.isLogin = true
+        self.token = token
     }
     
     private func initSocket(token: String) {

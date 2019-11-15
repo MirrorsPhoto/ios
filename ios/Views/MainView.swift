@@ -14,6 +14,8 @@ struct MainView: View {
     
     @ObservedObject var sessionManager: SessionManager
     
+    @State private var showUserDetailModal = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -21,30 +23,26 @@ struct MainView: View {
                 Text("Total cash: \(String(sessionManager.totalCash ?? 0))")
                 Text("Total client: \(String(sessionManager.totalClient ?? 0))")
                 Spacer()
-                Button(action: {
-                    self.logOut()
-                }) {
-                    Text("Logout")
-                }
             }
             .navigationBarTitle(Text("Dashboard"))
             .navigationBarItems(
                 trailing:
-                    VStack {
-                        RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!)
-                        .scaledToFit()
-                        .clipShape(Circle())
-                        .shadow(radius: 10)
+                    Button(action: {
+                        self.showUserDetailModal.toggle()
+                    }) {
+                        VStack {
+                            RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!, imageRenderingMode: .original)
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                        }
+                        .frame(width: 50, height: 50)
                     }
-                    .frame(width: 50, height: 50)
-                
             )
+            .sheet(isPresented: self.$showUserDetailModal) {
+                UserDetailView(sessionManager: self.sessionManager, showUserDetailModal: self.$showUserDetailModal)
+            }
         }
-    }
-    
-    func logOut() {
-        sessionManager.logOut()
-        UserDefaults.standard.removeObject(forKey: "token")
     }
 }
 

@@ -10,6 +10,7 @@
 		321D3060237EBBC8003780D6 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 321D305F237EBBC8003780D6 /* SwURL */; };
 		321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321D3061237ED6D9003780D6 /* AuthenticationServices.framework */; };
 		321D3065237F09AB003780D6 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 321D3064237F09AB003780D6 /* Starscream */; };
+		321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3081237F2E66003780D6 /* UserDetailView.swift */; };
 		329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E1237DDD2700751025 /* AppDelegate.swift */; };
 		329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E3237DDD2700751025 /* SceneDelegate.swift */; };
 		329D26E6237DDD2700751025 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		1A0DB05DC234205F60ABF3AF /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		321D3061237ED6D9003780D6 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		321D3081237F2E66003780D6 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		329D26DE237DDD2700751025 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329D26E1237DDD2700751025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		329D26E3237DDD2700751025 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				329D26E5237DDD2700751025 /* RootView.swift */,
 				329D26F7237DDDB200751025 /* AuthView.swift */,
 				329D26F9237DDDC600751025 /* MainView.swift */,
+				321D3081237F2E66003780D6 /* UserDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */,
 				329D26FD237DDDF900751025 /* SessionManager.swift in Sources */,
 				329D26F8237DDDB200751025 /* AuthView.swift in Sources */,
+				321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */,
 				329D26FA237DDDC600751025 /* MainView.swift in Sources */,
 				329D26E6237DDD2700751025 /* RootView.swift in Sources */,
 				329D2705237E92DF00751025 /* User.swift in Sources */,
