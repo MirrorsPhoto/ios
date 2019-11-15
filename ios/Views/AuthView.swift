@@ -36,6 +36,7 @@ struct AuthView: View {
                         .font(.headline)
                         
                 }
+                .disabled(login.isEmpty || password.isEmpty)
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))
                 }
