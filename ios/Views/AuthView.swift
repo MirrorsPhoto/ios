@@ -24,9 +24,11 @@ struct AuthView: View {
             VStack() {
                 Spacer()
                 TextField("Login", text: $login)
+                    .keyboardType(UIKeyboardType.alphabet)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 SecureField("Password", text: $password)
+                    .keyboardType(UIKeyboardType.alphabet)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Spacer()
                 Button(action: {
