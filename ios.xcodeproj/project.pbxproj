@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		321D3060237EBBC8003780D6 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 321D305F237EBBC8003780D6 /* SwURL */; };
+		321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321D3061237ED6D9003780D6 /* AuthenticationServices.framework */; };
 		329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E1237DDD2700751025 /* AppDelegate.swift */; };
 		329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E3237DDD2700751025 /* SceneDelegate.swift */; };
 		329D26E6237DDD2700751025 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		1A0DB05DC234205F60ABF3AF /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		321D3061237ED6D9003780D6 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		329D26DE237DDD2700751025 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329D26E1237DDD2700751025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		329D26E3237DDD2700751025 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */,
 				321D3060237EBBC8003780D6 /* SwURL in Frameworks */,
 				4DA4EC1D327BD0A0894859E5 /* Pods_ios.framework in Frameworks */,
 			);
@@ -56,6 +59,7 @@
 		31D49B8D306EA19DCD180C1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				321D3061237ED6D9003780D6 /* AuthenticationServices.framework */,
 				3B14A7C55DD8D14C5CE91ED6 /* Pods_ios.framework */,
 			);
 			name = Frameworks;
