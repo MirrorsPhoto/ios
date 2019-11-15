@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import JWTDecode
 
 struct MainView: View {
     
@@ -15,7 +16,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("token is \(UserDefaults.standard.string(forKey: "token")!)")
+                Text("Email is \(sessionManager.user!.email)")
                 Button(action: {
                     self.logOut()
                 }) {

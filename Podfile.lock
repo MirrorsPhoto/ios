@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (4.9.1)
+  - JWTDecode (2.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - JWTDecode (~> 2.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - JWTDecode
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  JWTDecode: 85a405ab16d5473e99bd89ded1d535090ebd6a0e
 
-PODFILE CHECKSUM: 883946b417966ef7f87815e414e598b851f96ecc
+PODFILE CHECKSUM: 907e5ef1df365b55fe134f37b20fff67551b0ae9
 
 COCOAPODS: 1.8.4

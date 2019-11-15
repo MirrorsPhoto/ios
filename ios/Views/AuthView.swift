@@ -77,8 +77,8 @@ struct AuthView: View {
                 return
             }
             
-            self.sessionManager.signIn()
             UserDefaults.standard.set(token, forKey: "token")
+            self.sessionManager.signIn(token: token)
         }
     }
 }
