@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321D3060237EBBC8003780D6 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 321D305F237EBBC8003780D6 /* SwURL */; };
 		329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E1237DDD2700751025 /* AppDelegate.swift */; };
 		329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E3237DDD2700751025 /* SceneDelegate.swift */; };
 		329D26E6237DDD2700751025 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321D3060237EBBC8003780D6 /* SwURL in Frameworks */,
 				4DA4EC1D327BD0A0894859E5 /* Pods_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +165,9 @@
 			dependencies = (
 			);
 			name = ios;
+			packageProductDependencies = (
+				321D305F237EBBC8003780D6 /* SwURL */,
+			);
 			productName = ios;
 			productReference = 329D26DE237DDD2700751025 /* ios.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 329D26D5237DDD2600751025;
+			packageReferences = (
+				321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */,
+			);
 			productRefGroup = 329D26DF237DDD2700751025 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cmtrounce/SwURL";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		321D305F237EBBC8003780D6 /* SwURL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */;
+			productName = SwURL;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 329D26D6237DDD2600751025 /* Project object */;
 }

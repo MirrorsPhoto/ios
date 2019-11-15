@@ -8,6 +8,7 @@
 
 import SwiftUI
 import JWTDecode
+import SwURL
 
 struct MainView: View {
     
@@ -16,7 +17,8 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Email is \(sessionManager.user!.email)")
+                Text(verbatim: sessionManager.user!.username)
+                Spacer()
                 Button(action: {
                     self.logOut()
                 }) {
@@ -24,6 +26,17 @@ struct MainView: View {
                 }
             }
             .navigationBarTitle(Text("Dashboard"))
+            .navigationBarItems(
+                trailing:
+                    VStack {
+                        RemoteImageView(url: URL(string: sessionManager.user!.avatar)!)
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .shadow(radius: 10)
+                    }
+                    .frame(width: 50, height: 50)
+                
+            )
         }
     }
     

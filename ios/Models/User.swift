@@ -15,6 +15,7 @@ class User {
     var roleId: Int
     var roleName: String
     var email: String
+    var avatar: String
     
     init(data: [String : Any]?) {
         self.id = data?["id"] as! Int
@@ -25,5 +26,6 @@ class User {
         self.roleId = data?["role_id"] as! Int
         self.roleName = data?["role_phrase"] as! String
         self.email = data?["email"] as! String
+        self.avatar = data?["avatar"] as! String
     }
 }
