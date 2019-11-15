@@ -29,7 +29,7 @@ struct MainView: View {
             .navigationBarItems(
                 trailing:
                     VStack {
-                        RemoteImageView(url: URL(string: sessionManager.user!.avatar)!)
+                        RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!)
                         .scaledToFit()
                         .clipShape(Circle())
                         .shadow(radius: 10)
