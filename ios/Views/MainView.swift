@@ -19,9 +19,10 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Spacer()
-                Text("Total cash: \(String(sessionManager.totalCash ?? 0))")
-                Text("Total client: \(String(sessionManager.totalClient ?? 0))")
+                HStack {
+                    CardView(text: "💰", number: sessionManager.totalCash ?? 0)
+                    CardView(text: "🧟‍♀️",  number: sessionManager.totalClient ?? 0)
+                }
                 Spacer()
             }
             .navigationBarTitle(Text("Dashboard"))
