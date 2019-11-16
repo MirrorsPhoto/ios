@@ -18,14 +18,16 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    CardView(text: "💰", number: sessionManager.totalCash ?? 0)
-                    CardView(text: "🧟‍♀️",  number: sessionManager.totalClient ?? 0)
+             ScrollView {
+                VStack {
+                    HStack {
+                        CardView(text: "💰", number: sessionManager.totalCash ?? 0)
+                        CardView(text: "🧟‍♀️",  number: sessionManager.totalClient ?? 0)
+                    }
+                    Spacer()
                 }
-                Spacer()
-            }
-            .navigationBarTitle(Text("Dashboard"))
+             }
+             .navigationBarTitle(Text("Dashboard"))
             .navigationBarItems(
                 trailing:
                     Button(action: {
