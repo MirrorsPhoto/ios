@@ -12,7 +12,8 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    var sessionManager: SessionManager?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,8 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let token = UserDefaults.standard.string(forKey: "token")
 
+        sessionManager = SessionManager(token: token)
+        
         // Create the SwiftUI view that provides the window contents.
-        let contentView = RootView(sessionManager: SessionManager(token: token))
+        let contentView = RootView(sessionManager: sessionManager!)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -51,14 +54,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
+        guard let manager = sessionManager else {
+            return
+        }
+        
+        guard let socket = manager.socket else {
+            return
+        }
+        
+        socket.connect()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+        guard let manager = sessionManager else {
+            return
+        }
+        
+        guard let socket = manager.socket else {
+            return
+        }
+        
+        socket.disconnect()
     }
 
 

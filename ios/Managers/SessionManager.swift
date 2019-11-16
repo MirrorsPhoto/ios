@@ -61,6 +61,7 @@ class SessionManager : ObservableObject, WebSocketDelegate {
     }
     
     func websocketDidConnect(socket: WebSocketClient) {
+        print("Socket connection")
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(self.token!)"
         ]
