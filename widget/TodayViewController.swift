@@ -14,8 +14,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var cashLabel: UILabel!
     @IBOutlet weak var clientLabel: UILabel!
+    @IBOutlet weak var signIn: UIButton!
     
     private var token: String? = nil
+    private var isAuth: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,35 +25,41 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
         self.token = sharedDefaults?.string(forKey: "token")
         
-        if token != nil {
-            let headers: HTTPHeaders = [
-                "Authorization": "Bearer \(self.token!)"
-            ]
+        self.isAuth = self.token != nil
+        
+        if !self.isAuth {
+            self.signIn.isHidden = false
             
-            Alamofire.request("http://api.mirrors-photo.ru/sale/today", headers: headers).responseJSON { (response) in
-                guard let responseJSON = response.result.value as? [String: Any] else {
-                    return
-                }
-                
-                guard responseJSON["status"] as! String == "OK" else {
-                    return
-                }
-                
-                guard let result = responseJSON["response"] as? [String: Int] else {
-                    return
-                }
-                
-                guard var cash = result["cash"] else {
-                    return
-                }
-                
-                guard var client = result["client"] else {
-                    return
-                }
-                
-                self.cashLabel.text = "Cash: \(cash)"
-                self.clientLabel.text = "Client: \(client)"
+            return
+        }
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(self.token!)"
+        ]
+        
+        Alamofire.request("http://api.mirrors-photo.ru/sale/today", headers: headers).responseJSON { (response) in
+            guard let responseJSON = response.result.value as? [String: Any] else {
+                return
             }
+            
+            guard responseJSON["status"] as! String == "OK" else {
+                return
+            }
+            
+            guard let result = responseJSON["response"] as? [String: Int] else {
+                return
+            }
+            
+            guard let cash = result["cash"] else {
+                return
+            }
+            
+            guard let client = result["client"] else {
+                return
+            }
+            
+            self.cashLabel.text = "Cash: \(cash)"
+            self.clientLabel.text = "Client: \(client)"
         }
     }
         
@@ -60,8 +68,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
-    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        print("widgetActiveDisplayModeDidChange")
+    @IBAction func openApp(_ sender: UIButton) {
+        let url = URL(string: "mirrorsPhoto://")!
+        self.extensionContext?.open(url, completionHandler: { (success) in
+            if (!success) {
+                print("error: failed to open app from Today Extension")
+            }
+        })
     }
-    
 }

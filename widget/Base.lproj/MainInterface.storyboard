@@ -29,6 +29,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxi-1d-iqt">
+                                <rect key="frame" x="116" y="4" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
+                                <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="gDw-Pg-X1l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cPd-CV-zON"/>
                     </view>
@@ -38,6 +47,7 @@
                     <connections>
                         <outlet property="cashLabel" destination="sSG-yT-Ikd" id="MFV-BK-Voy"/>
                         <outlet property="clientLabel" destination="PUt-rz-ssC" id="W3I-RE-x7O"/>
+                        <outlet property="signIn" destination="Pxi-1d-iqt" id="obr-nF-grg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
