@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ios
+
+  Created by Сергей Прищенко on 18.11.2019.
+  Copyright © 2019 Mirror's Photo. All rights reserved.
+*/
+
+"Error" = "Ошибка";
+"Ok" = "Ок";
+
+"Sign in" = "Войти";
+"Authorization" = "Авторизация";
+"Dashboard" = "Панель";
+"Logout" = "Выйти";
+"Login" = "Логин";
+"Password" = "Пароль";

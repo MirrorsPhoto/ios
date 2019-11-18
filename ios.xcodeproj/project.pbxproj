@@ -11,11 +11,12 @@
 		321BE6742381D0B6008750A9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321BE6732381D0B6008750A9 /* TodayViewController.swift */; };
 		321BE6772381D0B6008750A9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321BE6752381D0B6008750A9 /* MainInterface.storyboard */; };
 		321BE67B2381D0B6008750A9 /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 321BE66F2381D0B6008750A9 /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		321D3060237EBBC8003780D6 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 321D305F237EBBC8003780D6 /* SwiftPackageProductDependency */; };
+		321D3060237EBBC8003780D6 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 321D305F237EBBC8003780D6 /* SwURL */; };
 		321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321D3061237ED6D9003780D6 /* AuthenticationServices.framework */; };
-		321D3065237F09AB003780D6 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 321D3064237F09AB003780D6 /* SwiftPackageProductDependency */; };
+		321D3065237F09AB003780D6 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 321D3064237F09AB003780D6 /* Starscream */; };
 		321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3081237F2E66003780D6 /* UserDetailView.swift */; };
 		321D3084237FF70E003780D6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3083237FF70E003780D6 /* CardView.swift */; };
+		325622682382A39E006FEABF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E1237DDD2700751025 /* AppDelegate.swift */; };
 		329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E3237DDD2700751025 /* SceneDelegate.swift */; };
 		329D26E6237DDD2700751025 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
@@ -65,6 +66,8 @@
 		321D3081237F2E66003780D6 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		321D3083237FF70E003780D6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3256225F2381DE2A006FEABF /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
+		325622692382A39E006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3256226B2382A3B5006FEABF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		329D26DE237DDD2700751025 /* Mirrors Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mirrors Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		329D26E1237DDD2700751025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		329D26E3237DDD2700751025 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,9 +103,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */,
-				321D3060237EBBC8003780D6 /* BuildFile in Frameworks */,
+				321D3060237EBBC8003780D6 /* SwURL in Frameworks */,
 				4DA4EC1D327BD0A0894859E5 /* Pods_ios.framework in Frameworks */,
-				321D3065237F09AB003780D6 /* BuildFile in Frameworks */,
+				321D3065237F09AB003780D6 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +166,7 @@
 				329D26EC237DDD2A00751025 /* LaunchScreen.storyboard */,
 				329D26EF237DDD2A00751025 /* Info.plist */,
 				329D26E9237DDD2A00751025 /* Preview Content */,
+				3256226A2382A39E006FEABF /* Localizable.strings */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -262,8 +266,8 @@
 			);
 			name = ios;
 			packageProductDependencies = (
-				321D305F237EBBC8003780D6 /* SwiftPackageProductDependency */,
-				321D3064237F09AB003780D6 /* SwiftPackageProductDependency */,
+				321D305F237EBBC8003780D6 /* SwURL */,
+				321D3064237F09AB003780D6 /* Starscream */,
 			);
 			productName = ios;
 			productReference = 329D26DE237DDD2700751025 /* Mirrors Photo.app */;
@@ -294,11 +298,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 329D26D5237DDD2600751025;
 			packageReferences = (
-				321D305E237EBBC8003780D6 /* RemoteSwiftPackageReference */,
-				321D3063237F09AB003780D6 /* RemoteSwiftPackageReference */,
+				321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */,
+				321D3063237F09AB003780D6 /* XCRemoteSwiftPackageReference "Starscream" */,
 			);
 			productRefGroup = 329D26DF237DDD2700751025 /* Products */;
 			projectDirPath = "";
@@ -324,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329D26EE237DDD2A00751025 /* LaunchScreen.storyboard in Resources */,
+				325622682382A39E006FEABF /* Localizable.strings in Resources */,
 				329D26EB237DDD2A00751025 /* Preview Assets.xcassets in Resources */,
 				329D26E8237DDD2A00751025 /* Assets.xcassets in Resources */,
 			);
@@ -439,6 +445,15 @@
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
+		3256226A2382A39E006FEABF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325622692382A39E006FEABF /* en */,
+				3256226B2382A3B5006FEABF /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		329D26EC237DDD2A00751025 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -496,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -556,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -689,7 +706,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		321D305E237EBBC8003780D6 /* RemoteSwiftPackageReference */ = {
+		321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cmtrounce/SwURL";
 			requirement = {
@@ -697,7 +714,7 @@
 				minimumVersion = 0.2.2;
 			};
 		};
-		321D3063237F09AB003780D6 /* RemoteSwiftPackageReference */ = {
+		321D3063237F09AB003780D6 /* XCRemoteSwiftPackageReference "Starscream" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/daltoniam/Starscream.git";
 			requirement = {
@@ -708,14 +725,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		321D305F237EBBC8003780D6 /* SwiftPackageProductDependency */ = {
+		321D305F237EBBC8003780D6 /* SwURL */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 321D305E237EBBC8003780D6 /* RemoteSwiftPackageReference */;
+			package = 321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */;
 			productName = SwURL;
 		};
-		321D3064237F09AB003780D6 /* SwiftPackageProductDependency */ = {
+		321D3064237F09AB003780D6 /* Starscream */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 321D3063237F09AB003780D6 /* RemoteSwiftPackageReference */;
+			package = 321D3063237F09AB003780D6 /* XCRemoteSwiftPackageReference "Starscream" */;
 			productName = Starscream;
 		};
 /* End XCSwiftPackageProductDependency section */
