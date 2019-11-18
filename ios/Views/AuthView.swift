@@ -79,7 +79,9 @@ struct AuthView: View {
                 return
             }
             
-            UserDefaults.standard.set(token, forKey: "token")
+            let sharedDefaults = UserDefaults(suiteName: "group.com.mirrors.ios.widget.data")
+            
+            sharedDefaults!.set(token, forKey: "token")
             self.sessionManager.signIn(token: token)
         }
     }

@@ -36,7 +36,6 @@ class SessionManager : ObservableObject, WebSocketDelegate {
     
     func logOut() {
         self.isLogin = false
-//        self.user = nil
         closeSocket()
     }
     

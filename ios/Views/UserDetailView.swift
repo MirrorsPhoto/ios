@@ -34,6 +34,9 @@ struct UserDetailView: View {
     func logOut() {
         self.showUserDetailModal.toggle()
         sessionManager.logOut()
-        UserDefaults.standard.removeObject(forKey: "token")
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.com.mirrors.ios.widget.data")
+        
+        sharedDefaults!.removeObject(forKey: "token")
     }
 }

@@ -20,7 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        let token = UserDefaults.standard.string(forKey: "token")
+        let sharedDefaults = UserDefaults(suiteName: "group.com.mirrors.ios.widget.data")
+        
+        let token = sharedDefaults!.string(forKey: "token")
 
         sessionManager = SessionManager(token: token)
         

@@ -5,3 +5,8 @@ target 'ios' do
     pod 'Alamofire', '~> 4.7'
     pod 'JWTDecode', '~> 2.0'
 end
+
+target 'widget' do
+    pod 'Alamofire', '~> 4.7'
+    pod 'JWTDecode', '~> 2.0'
+end
