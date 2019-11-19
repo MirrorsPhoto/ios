@@ -12,12 +12,16 @@ import Alamofire
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
-    @IBOutlet weak var cashLabel: UILabel!
-    @IBOutlet weak var clientLabel: UILabel!
-    @IBOutlet weak var signIn: UIButton!
-    
     private var token: String? = nil
     private var isAuth: Bool = false
+    
+    @IBOutlet weak var cashCard: RoundedCornerView!
+    @IBOutlet weak var clientCard: RoundedCornerView!
+    
+    @IBOutlet weak var cashLabel: UILabel!
+    @IBOutlet weak var clientLabel: UILabel!
+    
+    @IBOutlet weak var signIn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +89,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func updateWidget(cash: Int, client: Int) {
-        self.cashLabel.text = "Cash: \(cash)"
-        self.clientLabel.text = "Client: \(client)"
+        self.cashCard.isHidden = false
+        self.clientCard.isHidden = false
+        
+        self.cashLabel.text = formatAmount(cash)
+        self.clientLabel.text = String(client)
+    }
+    
+    private func formatAmount(_ amount: Int) -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.currencySymbol = "₽"
+        currencyFormatter.maximumFractionDigits = 0
+
+        return currencyFormatter.string(from: NSNumber(value: amount))!
     }
 }

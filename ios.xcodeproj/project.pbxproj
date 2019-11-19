@@ -17,6 +17,7 @@
 		321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3081237F2E66003780D6 /* UserDetailView.swift */; };
 		321D3084237FF70E003780D6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3083237FF70E003780D6 /* CardView.swift */; };
 		325622682382A39E006FEABF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
+		3278912C238447EC00D21A3D /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278912B238447EC00D21A3D /* RoundedCornerView.swift */; };
 		329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E1237DDD2700751025 /* AppDelegate.swift */; };
 		329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E3237DDD2700751025 /* SceneDelegate.swift */; };
 		329D26E6237DDD2700751025 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
@@ -68,7 +69,7 @@
 		325622692382A39E006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3256226B2382A3B5006FEABF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32562293238334C3006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		32562294238334C3006FEABF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3278912B238447EC00D21A3D /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		329D26DE237DDD2700751025 /* Mirrors Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mirrors Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		329D26E1237DDD2700751025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		329D26E3237DDD2700751025 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 				321BE6732381D0B6008750A9 /* TodayViewController.swift */,
 				321BE6752381D0B6008750A9 /* MainInterface.storyboard */,
 				321BE6782381D0B6008750A9 /* Info.plist */,
+				3278912B238447EC00D21A3D /* RoundedCornerView.swift */,
 			);
 			path = widget;
 			sourceTree = "<group>";
@@ -408,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				321BE6742381D0B6008750A9 /* TodayViewController.swift in Sources */,
+				3278912C238447EC00D21A3D /* RoundedCornerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +445,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				32562293238334C3006FEABF /* en */,
-				32562294238334C3006FEABF /* ru */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -473,7 +475,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = M85FTR22CA;
 				INFOPLIST_FILE = widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -481,7 +483,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mirrors.ios.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -496,7 +498,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = M85FTR22CA;
 				INFOPLIST_FILE = widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -504,7 +506,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mirrors.ios.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -637,7 +639,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ios/ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"ios/Preview Content\"";
 				DEVELOPMENT_TEAM = M85FTR22CA;
 				ENABLE_PREVIEWS = YES;
@@ -647,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mirrors.ios;
 				PRODUCT_NAME = "Mirrors Photo";
 				SWIFT_VERSION = 5.0;
@@ -663,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ios/ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"ios/Preview Content\"";
 				DEVELOPMENT_TEAM = M85FTR22CA;
 				ENABLE_PREVIEWS = YES;
@@ -673,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mirrors.ios;
 				PRODUCT_NAME = "Mirrors Photo";
 				SWIFT_VERSION = 5.0;
