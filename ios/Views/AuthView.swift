@@ -45,6 +45,7 @@ struct AuthView: View {
                     Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))
                 }
             }
+            .padding()
             .navigationBarTitle(Text("Authorization"))
         }
     }
