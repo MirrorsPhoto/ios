@@ -33,6 +33,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             return
         }
         
+        let cashFromStorage = sharedDefaults?.integer(forKey: "cashTotal") ?? 0
+        let clientFromStorage = sharedDefaults?.integer(forKey: "clientTotal") ?? 0
+        
+        self.updateWidget(cash: cashFromStorage, client: clientFromStorage)
+        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(self.token!)"
         ]
@@ -58,8 +63,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 return
             }
             
-            self.cashLabel.text = "Cash: \(cash)"
-            self.clientLabel.text = "Client: \(client)"
+            sharedDefaults!.set(cash, forKey: "cashTotal")
+            sharedDefaults!.set(client, forKey: "clientTotal")
+            
+            self.updateWidget(cash: cash, client: client)
         }
     }
         
@@ -75,5 +82,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 print("error: failed to open app from Today Extension")
             }
         })
+    }
+    
+    private func updateWidget(cash: Int, client: Int) {
+        self.cashLabel.text = "Cash: \(cash)"
+        self.clientLabel.text = "Client: \(client)"
     }
 }
