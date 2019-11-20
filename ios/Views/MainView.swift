@@ -21,7 +21,7 @@ struct MainView: View {
              ScrollView {
                 VStack {
                     HStack {
-                        CardView(text: "💰", number: sessionManager.totalCash ?? 0)
+                        CardView(text: "🥬", number: sessionManager.totalCash ?? 0)
                         CardView(text: "🧟‍♀️",  number: sessionManager.totalClient ?? 0)
                     }
                     Spacer()
