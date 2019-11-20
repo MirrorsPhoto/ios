@@ -93,7 +93,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.clientCard.isHidden = false
         
         self.cashLabel.text = formatAmount(cash)
-        self.clientLabel.text = String(client)
+        self.clientLabel.text = formatNumber(client)
     }
     
     private func formatAmount(_ amount: Int) -> String {
@@ -104,4 +104,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         return currencyFormatter.string(from: NSNumber(value: amount))!
     }
+    
+    private func formatNumber(_ number: Int) -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .decimal
+        currencyFormatter.maximumFractionDigits = 0
+
+        return currencyFormatter.string(from: NSNumber(value: number))!
+    }
+    
 }
