@@ -36,11 +36,12 @@ struct MainView: View {
                 trailing: Button(action: {
                     self.showUserDetailModal.toggle()
                 }) {
-                        VStack {
+                        HStack {
+                            Spacer()
                             RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!, imageRenderingMode: .original)
                                 .scaledToFit()
                                 .clipShape(Circle())
-                                .shadow(radius: 10)
+                            Spacer()
                         }
                         .frame(width: 50, height: 50)
                 }
