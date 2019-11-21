@@ -32,12 +32,12 @@ struct CardView: View {
                 }
             }
             .padding(20)
-        }.frame(width: 170, height: 85)
+        }
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(text: "🥬", number: 9999)
+            CardView(text: "🥬", number: 99999).frame(width: 266, height: 50)
     }
 }

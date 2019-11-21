@@ -18,32 +18,35 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-             ScrollView {
-                VStack {
-                    HStack {
-                        CardView(text: "🥬", number: sessionManager.totalCash ?? 0)
-                        CardView(text: "🧟‍♀️",  number: sessionManager.totalClient ?? 0)
+            GeometryReader { geometry in
+                ScrollView {
+                    VStack {
+                        HStack {
+                            CardView(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0)
+                                .frame(width: geometry.size.width * 0.35)
+                            CardView(text: "🥬", number: self.sessionManager.totalCash ?? 0)
+                                .frame(width: geometry.size.width * 0.55)
+                        }
                     }
                     Spacer()
                 }
-             }
-             .navigationBarTitle(Text("Dashboard"))
+            }
+            .navigationBarTitle(Text("Dashboard"))
             .navigationBarItems(
-                trailing:
-                    Button(action: {
-                        self.showUserDetailModal.toggle()
-                    }) {
+                trailing: Button(action: {
+                    self.showUserDetailModal.toggle()
+                }) {
                         VStack {
                             RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!, imageRenderingMode: .original)
-                            .scaledToFit()
-                            .clipShape(Circle())
-                            .shadow(radius: 10)
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
                         }
                         .frame(width: 50, height: 50)
-                    }
+                }
             )
-            .sheet(isPresented: self.$showUserDetailModal) {
-                UserDetailView(sessionManager: self.sessionManager, showUserDetailModal: self.$showUserDetailModal)
+                .sheet(isPresented: self.$showUserDetailModal) {
+                    UserDetailView(sessionManager: self.sessionManager, showUserDetailModal: self.$showUserDetailModal)
             }
         }
     }
