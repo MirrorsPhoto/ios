@@ -92,25 +92,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.cashCard.isHidden = false
         self.clientCard.isHidden = false
         
-        self.cashLabel.text = formatAmount(cash)
-        self.clientLabel.text = formatNumber(client)
-    }
-    
-    private func formatAmount(_ amount: Int) -> String {
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.currencySymbol = "₽"
-        currencyFormatter.maximumFractionDigits = 0
-
-        return currencyFormatter.string(from: NSNumber(value: amount))!
-    }
-    
-    private func formatNumber(_ number: Int) -> String {
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .decimal
-        currencyFormatter.maximumFractionDigits = 0
-
-        return currencyFormatter.string(from: NSNumber(value: number))!
+        self.cashLabel.text = Helper.formatCurrency(cash)
+        self.clientLabel.text = Helper.formatNumber(client)
     }
     
 }

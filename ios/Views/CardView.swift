@@ -12,6 +12,9 @@ struct CardView: View {
     
     var text: String
     var number: Int
+    var formatter = { (_ value: Int) -> String in
+        return String(value)
+    }
     
     var body: some View {
         ZStack {
@@ -26,7 +29,7 @@ struct CardView: View {
                 }
                 Spacer()
                 VStack {
-                    Text(String(number))
+                    Text(formatter(number))
                         .foregroundColor(Color.white)
                         .font(.largeTitle)
                 }

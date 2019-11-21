@@ -22,9 +22,9 @@ struct MainView: View {
                 ScrollView {
                     VStack {
                         HStack {
-                            CardView(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0)
+                            CardView(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0, formatter: Helper.formatNumber)
                                 .frame(width: geometry.size.width * 0.35)
-                            CardView(text: "🥬", number: self.sessionManager.totalCash ?? 0)
+                            CardView(text: "🥬", number: self.sessionManager.totalCash ?? 0, formatter: Helper.formatCurrency)
                                 .frame(width: geometry.size.width * 0.55)
                         }
                     }
