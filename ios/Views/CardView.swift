@@ -34,7 +34,7 @@ struct CardView: View {
                         .font(.largeTitle)
                 }
             }
-            .padding(20)
+            .padding(15)
         }
     }
 }
