@@ -22,21 +22,25 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
     
     init(token: String? = nil) {
+        self.totalCash = sharedDefaults?.integer(forKey: "cashTotal") ?? 0
+        self.totalClient = sharedDefaults?.integer(forKey: "clientTotal") ?? 0
+        
         if token == nil {
             return
         }
         
         setToken(token: token!)
-        initSocket(token: token!)
+        initSocket()
     }
     
     func signIn(token: String) {
         setToken(token: token)
-        initSocket(token: token)
+        initSocket()
     }
     
     func logOut() {
         self.isLogin = false
+        self.token = nil
         closeSocket()
     }
     
@@ -48,16 +52,19 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
         self.token = token
     }
     
-    private func initSocket(token: String) {
-        self.socket = WebSocketTaskConnection(url: URL(string: "ws://socket.mirrors-photo.ru:8000?token=\(token)")!)
+    func initSocket() {
+        if self.token == nil {
+            return
+        }
+        
+        self.socket = WebSocketTaskConnection(url: URL(string: "ws://socket.mirrors-photo.ru:8000?token=\(self.token!)")!)
         
         self.socket!.delegate = self
         self.socket!.connect()
     }
     
-    private func closeSocket() {
+    func closeSocket() {
         self.socket?.disconnect()
-        self.socket = nil
     }
     
     func onConnected(connection: WebSocketConnection) {

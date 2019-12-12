@@ -64,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        socket.connect()
+        manager.initSocket()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -76,7 +76,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        socket.disconnect()
+        manager.closeSocket()
     }
 
 
