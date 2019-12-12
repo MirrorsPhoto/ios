@@ -39,7 +39,7 @@ struct Row: View {
                 .font(.largeTitle)
         }
             .listRowPlatterColor(Color.blue)
-            .frame(height: 70)
+            .frame(height: 60)
     }
 }
 
