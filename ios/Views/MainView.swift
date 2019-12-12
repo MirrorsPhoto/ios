@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import JWTDecode
 import SwURL
 
 struct MainView: View {

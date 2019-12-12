@@ -5,6 +5,7 @@
 //  Created by Сергей Прищенко on 15.11.2019.
 //  Copyright © 2019 Mirror's Photo. All rights reserved.
 //
+import JWT
 
 class User {
     var id: Int
@@ -17,7 +18,7 @@ class User {
     var email: String
     var avatar: String?
     
-    init(data: [String : Any]?) {
+    init(data: ClaimSet?) {
         self.id = data?["id"] as! Int
         self.firstName = data?["first_name"] as! String
         self.middleName = data?["middle_name"] as? String

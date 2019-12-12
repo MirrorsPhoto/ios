@@ -5,10 +5,10 @@
 //  Created by Сергей Прищенко on 14.11.2019.
 //  Copyright © 2019 Mirror's Photo. All rights reserved.
 //
-import Combine
-import JWTDecode
+import JWT
 import Starscream
 import Alamofire
+import Foundation
 
 class SessionManager : ObservableObject, WebSocketDelegate {
     
@@ -42,9 +42,9 @@ class SessionManager : ObservableObject, WebSocketDelegate {
     }
     
     private func setToken(token: String) {
-        let jwt = try? decode(jwt: token)
+        let jwt = try? JWT.decode(token, algorithm: .hs256("devkey".data(using: .utf8)!))
         
-        self.user = User(data: jwt?.body)
+        self.user = User(data: jwt)
         self.isLogin = true
         self.token = token
     }
