@@ -20,6 +20,8 @@ class SessionManager : ObservableObject, WebSocketDelegate {
     @Published var totalCash: Int?
     @Published var totalClient: Int?
     
+    let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
+    
     init(token: String? = nil) {
         if token == nil {
             return
@@ -76,6 +78,9 @@ class SessionManager : ObservableObject, WebSocketDelegate {
         self.data = convertToDictionary(text: text)
         self.totalCash = getTodayCash()
         self.totalClient = getTodayClient()
+        
+        sharedDefaults!.set(self.totalCash, forKey: "cashTotal")
+        sharedDefaults!.set(self.totalClient, forKey: "clientTotal")
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
