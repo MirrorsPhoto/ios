@@ -6,17 +6,16 @@
 //  Copyright © 2019 Mirror's Photo. All rights reserved.
 //
 import JWT
-import Starscream
 import Alamofire
 import Foundation
 
-class SessionManager : ObservableObject, WebSocketDelegate {
+class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     
     @Published var isLogin = false
     @Published var user: User?
-    @Published var socket: WebSocket?
+    @Published var socket: WebSocketTaskConnection?
     @Published var token: String?
-    @Published var data: [String: Any]?
+    var data: [String: Any]?
     @Published var totalCash: Int?
     @Published var totalClient: Int?
     
@@ -50,7 +49,7 @@ class SessionManager : ObservableObject, WebSocketDelegate {
     }
     
     private func initSocket(token: String) {
-        self.socket = WebSocket(url: URL(string: "ws://socket.mirrors-photo.ru:8000?token=\(token)")!)
+        self.socket = WebSocketTaskConnection(url: URL(string: "ws://socket.mirrors-photo.ru:8000?token=\(token)")!)
         
         self.socket!.delegate = self
         self.socket!.connect()
@@ -61,7 +60,7 @@ class SessionManager : ObservableObject, WebSocketDelegate {
         self.socket = nil
     }
     
-    func websocketDidConnect(socket: WebSocketClient) {
+    func onConnected(connection: WebSocketConnection) {
         print("Socket connection")
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(self.token!)"
@@ -70,21 +69,30 @@ class SessionManager : ObservableObject, WebSocketDelegate {
         Alamofire.request("http://api.mirrors-photo.ru/socket/update", headers: headers)
     }
     
-    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+    func onDisconnected(connection: WebSocketConnection, error: Error?) {
         print("websocketDidDisconnect")
     }
     
-    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+    func onError(connection: WebSocketConnection, error: Error) {
+        print("websocket error")
+        print(error)
+    }
+    
+    func onMessage(connection: WebSocketConnection, text: String) {
         self.data = convertToDictionary(text: text)
-        self.totalCash = getTodayCash()
-        self.totalClient = getTodayClient()
+        DispatchQueue.main.async {
+            self.totalCash = self.getTodayCash()
+        }
+        DispatchQueue.main.async {
+            self.totalClient = self.getTodayClient()
+        }
         
         sharedDefaults!.set(self.totalCash, forKey: "cashTotal")
         sharedDefaults!.set(self.totalClient, forKey: "clientTotal")
     }
     
-    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        print("websocketDidReceiveData")
+    func onMessage(connection: WebSocketConnection, data: Data) {
+        print("new websocket data")
     }
     
     private func convertToDictionary(text: String) -> [String: Any]? {

@@ -24,6 +24,7 @@ struct AuthView: View {
             Spacer()
             TextField("Login", text: $login)
                 .textContentType(.username)
+                .focusable(true)
             SecureField("Password", text: $password)
                 .textContentType(.password)
             Spacer()
