@@ -18,6 +18,7 @@
 		321D3084237FF70E003780D6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3083237FF70E003780D6 /* CardView.swift */; };
 		325622682382A39E006FEABF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		3278912C238447EC00D21A3D /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278912B238447EC00D21A3D /* RoundedCornerView.swift */; };
+		32935E3923A27A1C00817678 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32935E3823A27A1C00817678 /* Alamofire */; };
 		329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E1237DDD2700751025 /* AppDelegate.swift */; };
 		329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E3237DDD2700751025 /* SceneDelegate.swift */; };
 		329D26E6237DDD2700751025 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
@@ -107,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32935E3923A27A1C00817678 /* Alamofire in Frameworks */,
 				321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */,
 				321D3060237EBBC8003780D6 /* SwURL in Frameworks */,
 				4DA4EC1D327BD0A0894859E5 /* Pods_ios.framework in Frameworks */,
@@ -275,6 +277,7 @@
 			packageProductDependencies = (
 				321D305F237EBBC8003780D6 /* SwURL */,
 				321D3064237F09AB003780D6 /* Starscream */,
+				32935E3823A27A1C00817678 /* Alamofire */,
 			);
 			productName = ios;
 			productReference = 329D26DE237DDD2700751025 /* Mirrors Photo.app */;
@@ -311,6 +314,7 @@
 			packageReferences = (
 				321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */,
 				321D3063237F09AB003780D6 /* XCRemoteSwiftPackageReference "Starscream" */,
+				32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 329D26DF237DDD2700751025 /* Products */;
 			projectDirPath = "";
@@ -740,6 +744,14 @@
 				minimumVersion = 3.1.1;
 			};
 		};
+		32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -752,6 +764,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 321D3063237F09AB003780D6 /* XCRemoteSwiftPackageReference "Starscream" */;
 			productName = Starscream;
+		};
+		32935E3823A27A1C00817678 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
