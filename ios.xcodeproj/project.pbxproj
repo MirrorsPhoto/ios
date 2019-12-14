@@ -42,7 +42,6 @@
 		32EA7F0123A284D300C7625D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329D26E7237DDD2A00751025 /* Assets.xcassets */; };
 		32EA7F0323A2879A00C7625D /* JWT in Frameworks */ = {isa = PBXBuildFile; productRef = 32EA7F0223A2879A00C7625D /* JWT */; };
 		32EA7F0723A287DA00C7625D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32EA7F0623A287DA00C7625D /* Alamofire */; };
-		32EA7F0823A2884400C7625D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D2704237E92DE00751025 /* User.swift */; };
 		32EA7F1123A2951900C7625D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7F1023A2951900C7625D /* MainView.swift */; };
 		32EA7F1423A2957200C7625D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26F9237DDDC600751025 /* MainView.swift */; };
 		32EA7F1723A29B7900C7625D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7F1623A29B7900C7625D /* AuthView.swift */; };
@@ -560,7 +559,6 @@
 				32EA7EEA23A2847900C7625D /* HostingController.swift in Sources */,
 				32EA7F1123A2951900C7625D /* MainView.swift in Sources */,
 				32EA7F1E23A2BF9C00C7625D /* WebSocketConnection.swift in Sources */,
-				32EA7F0823A2884400C7625D /* User.swift in Sources */,
 				32EA7F1723A29B7900C7625D /* AuthView.swift in Sources */,
 				32EA7EFF23A284C700C7625D /* SessionManager.swift in Sources */,
 				32EA7EEC23A2847900C7625D /* ExtensionDelegate.swift in Sources */,
