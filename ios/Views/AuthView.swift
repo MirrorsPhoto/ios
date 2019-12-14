@@ -47,7 +47,7 @@ struct AuthView: View {
             }
             .padding()
             .navigationBarTitle(Text("Authorization"))
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func signIn() {
