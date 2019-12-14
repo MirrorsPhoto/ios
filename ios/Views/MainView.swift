@@ -48,7 +48,7 @@ struct MainView: View {
                 .sheet(isPresented: self.$showUserDetailModal) {
                     UserDetailView(sessionManager: self.sessionManager, showUserDetailModal: self.$showUserDetailModal)
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
