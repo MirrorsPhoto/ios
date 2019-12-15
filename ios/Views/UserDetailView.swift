@@ -17,7 +17,7 @@ struct UserDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Hello")
+                Text("")
             }
             .navigationBarTitle(Text(verbatim: sessionManager.user!.username))
             .navigationBarItems(
@@ -28,7 +28,7 @@ struct UserDetailView: View {
                         Text("Logout").foregroundColor(Color.red)
                 }
             )
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func logOut() {
