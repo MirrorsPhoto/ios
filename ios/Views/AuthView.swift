@@ -22,6 +22,7 @@ struct AuthView: View {
     var body: some View {
         NavigationView {
             VStack() {
+                Spacer()
                 TextField("Login", text: $login)
                     .keyboardType(UIKeyboardType.alphabet)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -39,7 +40,8 @@ struct AuthView: View {
                         
                 }
                     .disabled(login.isEmpty || password.isEmpty)
-                SignInWithAppleView()
+                Spacer()
+                SignInWithAppleButton(sessionManager: sessionManager, showingAlert: $showingAlert, alertText: $alertText)
                     .frame(width: 200, height: 50)
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))

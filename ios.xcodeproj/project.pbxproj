@@ -16,7 +16,7 @@
 		321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3081237F2E66003780D6 /* UserDetailView.swift */; };
 		321D3084237FF70E003780D6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3083237FF70E003780D6 /* CardView.swift */; };
 		325622682382A39E006FEABF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
-		3269E85523A4060C002E4724 /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3269E85423A4060C002E4724 /* SignInWithAppleView.swift */; };
+		3269E85523A4060C002E4724 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */; };
 		3278912C238447EC00D21A3D /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278912B238447EC00D21A3D /* RoundedCornerView.swift */; };
 		32935E3923A27A1C00817678 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32935E3823A27A1C00817678 /* Alamofire */; };
 		329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E1237DDD2700751025 /* AppDelegate.swift */; };
@@ -27,6 +27,7 @@
 		329D26F8237DDDB200751025 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26F7237DDDB200751025 /* AuthView.swift */; };
 		329D26FD237DDDF900751025 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26FC237DDDF900751025 /* SessionManager.swift */; };
 		329D2705237E92DF00751025 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D2704237E92DE00751025 /* User.swift */; };
+		32E5B64023A53CCF0055719B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D2704237E92DE00751025 /* User.swift */; };
 		32EA7ED123A27CEA00C7625D /* JWT in Frameworks */ = {isa = PBXBuildFile; productRef = 32EA7ED023A27CEA00C7625D /* JWT */; };
 		32EA7ED323A27D1D00C7625D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32EA7ED223A27D1D00C7625D /* Alamofire */; };
 		32EA7EDA23A2847200C7625D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EA7ED823A2847200C7625D /* Interface.storyboard */; };
@@ -124,7 +125,7 @@
 		325622692382A39E006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3256226B2382A3B5006FEABF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32562293238334C3006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		3269E85423A4060C002E4724 /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
+		3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
 		3278912B238447EC00D21A3D /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		329D26DE237DDD2700751025 /* Mirrors Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mirrors Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		329D26E1237DDD2700751025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -256,7 +257,7 @@
 				329D26F9237DDDC600751025 /* MainView.swift */,
 				321D3081237F2E66003780D6 /* UserDetailView.swift */,
 				321D3083237FF70E003780D6 /* CardView.swift */,
-				3269E85423A4060C002E4724 /* SignInWithAppleView.swift */,
+				3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -517,7 +518,7 @@
 				329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */,
 				32EA7F1423A2957200C7625D /* MainView.swift in Sources */,
 				32F70EF2238734A3009ED468 /* Helper.swift in Sources */,
-				3269E85523A4060C002E4724 /* SignInWithAppleView.swift in Sources */,
+				3269E85523A4060C002E4724 /* SignInWithAppleButton.swift in Sources */,
 				329D26FD237DDDF900751025 /* SessionManager.swift in Sources */,
 				329D26F8237DDDB200751025 /* AuthView.swift in Sources */,
 				321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */,
@@ -536,7 +537,7 @@
 				32EA7F1123A2951900C7625D /* MainView.swift in Sources */,
 				32EA7F1E23A2BF9C00C7625D /* WebSocketConnection.swift in Sources */,
 				32EA7F1723A29B7900C7625D /* AuthView.swift in Sources */,
-				3269E87C23A50DDC002E4724 /* User.swift in Sources */,
+				32E5B64023A53CCF0055719B /* User.swift in Sources */,
 				32EA7EFF23A284C700C7625D /* SessionManager.swift in Sources */,
 				32EA7EEC23A2847900C7625D /* ExtensionDelegate.swift in Sources */,
 				32EA7F1B23A2AD7C00C7625D /* Helper.swift in Sources */,
