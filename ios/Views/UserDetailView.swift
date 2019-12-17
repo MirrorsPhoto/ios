@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwURL
 
 struct UserDetailView: View {
     
@@ -17,7 +18,24 @@ struct UserDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("")
+                HStack {
+                    RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!, imageRenderingMode: .original)
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(height: 100)
+                    Spacer()
+                    VStack {
+                        Text(verbatim: sessionManager.user!.firstName)
+                            .font(.title)
+                        Text(verbatim: sessionManager.user!.lastName)
+                            .font(.title)
+                        Text(verbatim: sessionManager.user!.email)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                }
+                Spacer()
             }
             .navigationBarTitle(Text(verbatim: sessionManager.user!.username))
             .navigationBarItems(
@@ -28,6 +46,7 @@ struct UserDetailView: View {
                         Text("Logout").foregroundColor(Color.red)
                 }
             )
+            .padding()
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     
