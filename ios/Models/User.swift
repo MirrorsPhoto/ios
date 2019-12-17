@@ -17,6 +17,7 @@ class User {
     var roleName: String
     var email: String
     var avatar: String?
+    var sub: String?
     
     init(data: ClaimSet?) {
         self.id = data?["id"] as! Int
@@ -28,5 +29,6 @@ class User {
         self.roleName = data?["role_phrase"] as! String
         self.email = data?["email"] as! String
         self.avatar = data?["avatar"] as? String
+        self.sub = data?["apple_sub"] as? String
     }
 }

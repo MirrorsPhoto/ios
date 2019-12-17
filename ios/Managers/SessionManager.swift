@@ -39,6 +39,8 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     }
     
     func logOut() {
+        sharedDefaults!.removeObject(forKey: "token")
+        
         self.isLogin = false
         self.token = nil
         closeSocket()

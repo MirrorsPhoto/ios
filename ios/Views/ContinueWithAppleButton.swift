@@ -1,8 +1,8 @@
 //
-//  SignInWithAppleView.swift
+//  ContinueWithAppleButton.swift
 //  ios
 //
-//  Created by Сергей Прищенко on 13.12.2019.
+//  Created by Сергей Прищенко on 15.12.2019.
 //  Copyright © 2019 Mirror's Photo. All rights reserved.
 //
 
@@ -10,34 +10,33 @@ import SwiftUI
 import AuthenticationServices
 import Alamofire
 
-struct SignInWithAppleButton: UIViewRepresentable {
+struct ContinueWithAppleButton: UIViewRepresentable {
     
     @ObservedObject var sessionManager: SessionManager
     
-    @Binding var showingAlert: Bool
-    @Binding var alertText: String
+    let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
     
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
+    func makeCoordinator() -> CoordinatorContinue {
+        return CoordinatorContinue(self)
     }
     
     func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
-        let button = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
+        let button = ASAuthorizationAppleIDButton(type: .continue, style: .white)
         
         button.cornerRadius = 10
         
-        button.addTarget(context.coordinator, action: #selector(Coordinator.didTapButton), for: .touchUpInside)
+        button.addTarget(context.coordinator, action: #selector(CoordinatorContinue.didTapButton), for: .touchUpInside)
         return button
     }
     
     func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {}
 }
 
-class Coordinator: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+class CoordinatorContinue: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
-    let parent: SignInWithAppleButton
+    let parent: ContinueWithAppleButton
   
-    init(_ parent: SignInWithAppleButton) {
+    init(_ parent: ContinueWithAppleButton) {
         self.parent = parent
     
         super.init()
@@ -63,34 +62,32 @@ class Coordinator: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationC
   
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
-            let identifyToken = credentials.identityToken!
+            let identifyToken = String(decoding: credentials.identityToken!, as: UTF8.self)
         
             let parameters: Parameters = [
-                "token": String(decoding: identifyToken, as: UTF8.self),
+                "token": identifyToken,
             ]
+
+            let token = self.parent.sharedDefaults?.string(forKey: "token")!
             
-            Alamofire.request("http://api.mirrors-photo.ru/apple/login", method: .post, parameters: parameters).responseJSON { (response) in
+            let headers: HTTPHeaders = [
+                "Authorization": "Bearer \(token!)"
+            ]
+
+            Alamofire.request("http://api.mirrors-photo.ru/apple/subscribe", method: .post, parameters: parameters, headers: headers).responseJSON { (response) in
                 guard let responseJSON = response.result.value as? [String: Any] else {
-                    self.parent.showingAlert = true
-                    self.parent.alertText = "Invalid information received from service"
                     return
                 }
                 
                 guard responseJSON["status"] as! String == "OK" else {
-                    let messages = responseJSON["message"] as! [String]
-                    self.parent.showingAlert = true
-                    self.parent.alertText = messages[0]
                     return
                 }
                 
                 guard let result = responseJSON["response"] as? [String: String] else {
-                    self.parent.showingAlert = true
-                    self.parent.alertText = "Invalid response format"
                     return
                 }
                 
                 guard let token = result["token"] else {
-                    self.parent.alertText = "Invalid token format"
                     return
                 }
                 
