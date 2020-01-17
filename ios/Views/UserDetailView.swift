@@ -36,6 +36,10 @@ struct UserDetailView: View {
                     Spacer()
                 }
                 Spacer()
+                if sessionManager.user!.sub == nil {
+                    ContinueWithAppleButton(sessionManager: sessionManager)
+                        .frame(width: 200, height: 50)
+                }
             }
             .navigationBarTitle(Text(verbatim: sessionManager.user!.username))
             .navigationBarItems(
@@ -51,11 +55,7 @@ struct UserDetailView: View {
     }
     
     func logOut() {
-        self.showUserDetailModal.toggle()
+//        self.showUserDetailModal.toggle()
         sessionManager.logOut()
-        
-        let sharedDefaults = UserDefaults(suiteName: "group.com.mirrors.ios.widget.data")
-        
-        sharedDefaults!.removeObject(forKey: "token")
     }
 }
