@@ -17,6 +17,17 @@ struct MainView: View {
             Row(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0, formatter: Helper.formatNumber)
             Row(text: "🥬", number: self.sessionManager.totalCash ?? 0, formatter: Helper.formatCurrency)
         }
+        .contextMenu(menuItems: {
+            Button(action: {
+                self.sessionManager.logOut()
+            }, label: {
+                VStack{
+                    Image(systemName: "clear")
+                        .font(.title)
+                    Text("Logout")
+                }
+            })
+        })
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Dashboard"))
     }
