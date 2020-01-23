@@ -98,6 +98,7 @@ class Coordinator: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationC
                 
                 sharedDefaults!.set(token, forKey: "token")
                 self.parent.sessionManager.signIn(token: token)
+                PushNotification.register()
             }
     }
   

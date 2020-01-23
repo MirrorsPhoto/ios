@@ -56,6 +56,7 @@ struct UserDetailView: View {
     
     func logOut() {
 //        self.showUserDetailModal.toggle()
+        PushNotification.unregisterDeviceToken()
         sessionManager.logOut()
     }
 }

@@ -8,17 +8,14 @@
 
 import UIKit
 import SwURL
-import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         SwURL.setImageCache(type: .persistent)
         
-        registerForPushNotifications()
+        PushNotification.register()
         
         return true
     }
@@ -38,29 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-      let tokenParts = deviceToken.map { data -> String in
-        return String(format: "%02.2hhx", data)
-      }
-      
-      let token = tokenParts.joined()
-      print("Device Token: \(token)")
+        PushNotification.registerDeviceToken(deviceToken)
     }
 
     func application(_ application: UIApplication,
                      didFailToRegisterForRemoteNotificationsWithError error: Error) {
-      print("Failed to register: \(error)")
-    }
-    
-    func registerForPushNotifications() {
-      UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-        (granted, error) in
-        print("Permission granted: \(granted)")
-
-        guard granted else { return }
-        DispatchQueue.main.async(execute: {
-          UIApplication.shared.registerForRemoteNotifications()
-        })
-      }
+        PushNotification.failRegister(error)
     }
 
 }
