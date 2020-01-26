@@ -14,8 +14,8 @@ struct MainView: View {
     
     var body: some View {
         List {
-            Row(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0, formatter: Helper.formatNumber)
-            Row(text: "🥬", number: self.sessionManager.totalCash ?? 0, formatter: Helper.formatCurrency)
+            Row(text: "🧟‍♀️",  number: self.sessionManager.todaySummary.client.today, formatter: Helper.formatNumber)
+            Row(text: "🥬", number: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
         }
         .contextMenu(menuItems: {
             Button(action: {

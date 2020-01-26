@@ -20,8 +20,8 @@ struct MainView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        NumberCardView(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0, formatter: Helper.formatNumber)
-                        NumberCardView(text: "🥬", number: self.sessionManager.totalCash ?? 0, formatter: Helper.formatCurrency)
+                        NumberCardView(text: "🧟‍♀️",  number: self.sessionManager.todaySummary.client.today, formatter: Helper.formatNumber)
+                        NumberCardView(text: "🥬", number: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
                     }
                 }
                 Spacer()

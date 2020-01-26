@@ -16,14 +16,13 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     @Published var socket: WebSocketTaskConnection?
     @Published var token: String?
     var data: [String: Any]?
-    @Published var totalCash: Int?
-    @Published var totalClient: Int?
+    @Published var todaySummary = TodaySummary()
     
     let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
     
     init(token: String? = nil) {
-        self.totalCash = sharedDefaults?.integer(forKey: "cashTotal") ?? 0
-        self.totalClient = sharedDefaults?.integer(forKey: "clientTotal") ?? 0
+        self.todaySummary.cash.today.total = sharedDefaults?.integer(forKey: "cashTotal") ?? 0
+        self.todaySummary.client.today = sharedDefaults?.integer(forKey: "clientTotal") ?? 0
         
         if token == nil {
             return
@@ -88,55 +87,14 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     }
     
     func onMessage(connection: WebSocketConnection, text: String) {
-        self.data = convertToDictionary(text: text)
         DispatchQueue.main.async {
-            self.totalCash = self.getTodayCash()
+            self.todaySummary = try! JSONDecoder().decode(TodaySummary.self, from: text.data(using: .utf8)!)
+            self.sharedDefaults!.set(self.todaySummary.cash.today.total, forKey: "cashTotal")
+            self.sharedDefaults!.set(self.todaySummary.client.today, forKey: "clientTotal")
         }
-        DispatchQueue.main.async {
-            self.totalClient = self.getTodayClient()
-        }
-        
-        sharedDefaults!.set(self.totalCash, forKey: "cashTotal")
-        sharedDefaults!.set(self.totalClient, forKey: "clientTotal")
     }
     
     func onMessage(connection: WebSocketConnection, data: Data) {
         print("new websocket data")
-    }
-    
-    private func convertToDictionary(text: String) -> [String: Any]? {
-        if let data = text.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
-    
-    func getTodayCash() -> Int {
-        guard let cash = self.data!["cash"] as? [String: Any] else {
-            return 0
-        }
-        guard let today = cash["today"] as? [String: Int] else {
-            return 0
-        }
-        guard let total = today["total"] else {
-            return 0
-        }
-        
-        return total
-    }
-    
-    func getTodayClient() -> Int {
-        guard let client = self.data!["client"] as? [String: Int] else {
-           return 0
-       }
-        guard let today = client["today"] else {
-           return 0
-       }
-       
-       return today
     }
 }
