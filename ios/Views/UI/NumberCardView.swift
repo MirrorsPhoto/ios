@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct NumberCardView: View {
     
     var text: String
     var number: Int
@@ -17,30 +17,25 @@ struct CardView: View {
     }
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.accentColor)
-                .cornerRadius(10)
-                .padding(5)
+        CardView() {
             HStack {
                 VStack {
-                    Text(text)
+                    Text(self.text)
                         .font(.largeTitle)
                 }
                 Spacer()
                 VStack {
-                    Text(formatter(number))
+                    Text(self.formatter(self.number))
                         .foregroundColor(Color.white)
                         .font(.largeTitle)
                 }
             }
-            .padding(15)
         }
     }
 }
 
-struct CardView_Previews: PreviewProvider {
+struct NumberCardView_Previews: PreviewProvider {
     static var previews: some View {
-            CardView(text: "🥬", number: 99999).frame(width: 266, height: 50)
+            NumberCardView(text: "🥬", number: 99999).frame(width: 266, height: 50)
     }
 }

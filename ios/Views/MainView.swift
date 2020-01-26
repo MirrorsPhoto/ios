@@ -17,19 +17,16 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            GeometryReader { geometry in
-                ScrollView {
-                    VStack {
-                        HStack {
-                            CardView(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0, formatter: Helper.formatNumber)
-                                .frame(width: geometry.size.width * 0.35)
-                            CardView(text: "🥬", number: self.sessionManager.totalCash ?? 0, formatter: Helper.formatCurrency)
-                                .frame(width: geometry.size.width * 0.55)
-                        }
+            ScrollView {
+                VStack {
+                    HStack {
+                        NumberCardView(text: "🧟‍♀️",  number: self.sessionManager.totalClient ?? 0, formatter: Helper.formatNumber)
+                        NumberCardView(text: "🥬", number: self.sessionManager.totalCash ?? 0, formatter: Helper.formatCurrency)
                     }
-                    Spacer()
                 }
+                Spacer()
             }
+            .padding([.horizontal])
             .navigationBarTitle(Text("Dashboard"))
             .navigationBarItems(
                 trailing: Button(action: {
