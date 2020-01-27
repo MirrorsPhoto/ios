@@ -23,6 +23,10 @@ struct MainView: View {
                         NumberCardView(text: "🧟‍♀️",  number: self.sessionManager.todaySummary.client.today, formatter: Helper.formatNumber)
                         NumberCardView(text: "🥬", number: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
                     }
+                    CardView {
+                        PieChartView(data: self.sessionManager.todaySummary.cash.today)
+                            .frame(height: 200)
+                    }
                 }
                 Spacer()
             }

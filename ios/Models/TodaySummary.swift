@@ -31,7 +31,7 @@ class Cash: Codable {
 }
 
 // MARK: - Today
-class Today: Codable {
+class Today: NSObject, Codable {
     var photo, good, copy, lamination, printing, service, total: Int
 
     init(photo: Int = 0, good: Int = 0, copy: Int = 0, lamination: Int = 0, printing: Int = 0, service: Int = 0, total: Int = 0) {
@@ -42,6 +42,10 @@ class Today: Codable {
         self.printing = printing
         self.service = service
         self.total = total
+    }
+    
+    func sum() -> Int {
+        return photo + good + copy + lamination + service
     }
 }
 
