@@ -21,3 +21,7 @@
 "copy" = "Ксерокопия";
 "service" = "Услуга";
 "lamination" = "Ламинация";
+
+"Today report title" = "Ежедневный отчет";
+"Today report body" = "Сегодня было %@ человек
+На сумму %@";

@@ -21,3 +21,7 @@
 "copy" = "Copy";
 "service" = "Service";
 "lamination" = "Lamination";
+
+"Today report title" = "Today report";
+"Today report body" = "Today there were %@ people
+For the amount %@";
