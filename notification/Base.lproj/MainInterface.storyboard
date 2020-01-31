@@ -61,7 +61,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vH2-gd-yWS" userLabel="Photo bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vH2-gd-yWS" userLabel="Photo bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
                                         <rect key="frame" x="15" y="116" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,7 +74,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMB-uD-sAf" userLabel="Good bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BMB-uD-sAf" userLabel="Good bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
                                         <rect key="frame" x="15" y="148" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,7 +88,7 @@
                                         <rect key="frame" x="274" y="129.5" width="24" height="21"/>
                                         <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Px8-IG-J1A" userLabel="Copy bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Px8-IG-J1A" userLabel="Copy bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
                                         <rect key="frame" x="15" y="180" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,7 +102,7 @@
                                         <rect key="frame" x="274" y="161" width="24" height="22"/>
                                         <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aI9-Xa-LOd" userLabel="Lamination bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aI9-Xa-LOd" userLabel="Lamination bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
                                         <rect key="frame" x="15" y="212" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,7 +112,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Or4-gp-pfm" userLabel="Service bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Or4-gp-pfm" userLabel="Service bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
                                         <rect key="frame" x="15" y="244" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,12 +143,10 @@
                                     <constraint firstItem="BMB-uD-sAf" firstAttribute="top" secondItem="vH2-gd-yWS" secondAttribute="bottom" constant="16" id="5X7-2y-vhr"/>
                                     <constraint firstItem="b0I-qx-u86" firstAttribute="trailing" secondItem="kyj-eG-dGp" secondAttribute="trailing" id="7e1-V7-peH"/>
                                     <constraint firstItem="gXD-96-CaA" firstAttribute="centerX" secondItem="gWO-dy-pCN" secondAttribute="centerX" id="8YW-pZ-hxu"/>
-                                    <constraint firstItem="BMB-uD-sAf" firstAttribute="width" secondItem="vH2-gd-yWS" secondAttribute="width" id="AXK-B8-Ji4"/>
                                     <constraint firstItem="b0I-qx-u86" firstAttribute="centerY" secondItem="vH2-gd-yWS" secondAttribute="centerY" id="B2Q-Ov-n6W"/>
                                     <constraint firstItem="r8A-Ye-U4S" firstAttribute="trailing" secondItem="kyj-eG-dGp" secondAttribute="leading" constant="-5" id="B8M-X1-LKd"/>
                                     <constraint firstItem="r8A-Ye-U4S" firstAttribute="bottom" secondItem="wUo-Ny-etp" secondAttribute="bottom" id="Bya-Ul-Cti"/>
                                     <constraint firstItem="W0U-Gn-mlc" firstAttribute="leading" secondItem="PJa-97-6vK" secondAttribute="leading" id="EHP-TD-UZX"/>
-                                    <constraint firstItem="Px8-IG-J1A" firstAttribute="width" secondItem="BMB-uD-sAf" secondAttribute="width" id="GRj-ee-tvj"/>
                                     <constraint firstItem="BMB-uD-sAf" firstAttribute="leading" secondItem="vH2-gd-yWS" secondAttribute="leading" id="GeM-O0-moo"/>
                                     <constraint firstItem="vH2-gd-yWS" firstAttribute="leading" secondItem="5F6-OZ-irw" secondAttribute="leading" id="Gh9-uX-tCv"/>
                                     <constraint firstItem="Px8-IG-J1A" firstAttribute="height" secondItem="BMB-uD-sAf" secondAttribute="height" id="HSf-bv-Nll"/>
@@ -170,8 +168,6 @@
                                     <constraint firstItem="Or4-gp-pfm" firstAttribute="height" secondItem="aI9-Xa-LOd" secondAttribute="height" id="cHy-tM-j7I"/>
                                     <constraint firstItem="5F6-OZ-irw" firstAttribute="top" secondItem="L7O-w7-Ird" secondAttribute="top" id="dyC-ar-Cga"/>
                                     <constraint firstItem="BMB-uD-sAf" firstAttribute="height" secondItem="vH2-gd-yWS" secondAttribute="height" id="gsp-qh-mq6"/>
-                                    <constraint firstItem="aI9-Xa-LOd" firstAttribute="width" secondItem="Px8-IG-J1A" secondAttribute="width" id="hyr-c1-I9V"/>
-                                    <constraint firstItem="Or4-gp-pfm" firstAttribute="width" secondItem="aI9-Xa-LOd" secondAttribute="width" id="i7R-vR-JbR"/>
                                     <constraint firstItem="gXD-96-CaA" firstAttribute="centerY" secondItem="Or4-gp-pfm" secondAttribute="centerY" id="iqS-kG-7LC"/>
                                     <constraint firstItem="kyj-eG-dGp" firstAttribute="bottom" secondItem="W0U-Gn-mlc" secondAttribute="bottom" id="itq-2p-xnB"/>
                                     <constraint firstItem="kyj-eG-dGp" firstAttribute="top" secondItem="W0U-Gn-mlc" secondAttribute="top" id="k3t-iX-vyu"/>
@@ -185,14 +181,23 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="vH2-gd-yWS" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="0.8" id="mdf-t0-iDj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="280"/>
+                    <connections>
+                        <outlet property="cash" destination="W0U-Gn-mlc" id="Vjb-Sd-iLl"/>
+                        <outlet property="cashLabel" destination="PJa-97-6vK" id="7jX-AZ-Oce"/>
+                        <outlet property="client" destination="kyj-eG-dGp" id="ASU-4V-B5o"/>
+                        <outlet property="clientLabel" destination="EOi-sq-cUz" id="HN1-Cm-owe"/>
+                        <outlet property="copyBar" destination="Px8-IG-J1A" id="aSB-P9-tEY"/>
+                        <outlet property="date" destination="5F6-OZ-irw" id="ag8-ur-735"/>
+                        <outlet property="goodBar" destination="BMB-uD-sAf" id="XRA-vQ-I5E"/>
+                        <outlet property="laminationBar" destination="aI9-Xa-LOd" id="mOT-VD-3ZP"/>
+                        <outlet property="photoBar" destination="vH2-gd-yWS" id="0oL-wi-4pl"/>
+                        <outlet property="serviceBar" destination="Or4-gp-pfm" id="wD0-iT-wmM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,5 +23,10 @@
 "lamination" = "Lamination";
 
 "Today report title" = "Today report";
-"Today report body" = "Today there were %@ people
+"Today report body" = "There were %@ people
 For the amount %@";
+"Today" = "Today";
+"Yesterday" = "Yesterday";
+"Cash" = "Cash";
+"Client" = "Client";
+"Client value" = "%@ per.";

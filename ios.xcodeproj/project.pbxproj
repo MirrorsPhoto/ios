@@ -62,6 +62,8 @@
 		32EA7F1D23A2BE3000C7625D /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7F1C23A2BE3000C7625D /* WebSocketConnection.swift */; };
 		32EA7F1E23A2BF9C00C7625D /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7F1C23A2BE3000C7625D /* WebSocketConnection.swift */; };
 		32ECBD5023D9FDBD00073415 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ECBD4F23D9FDBD00073415 /* PushNotification.swift */; };
+		32F30EFF23E463E10025C296 /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
+		32F30F0023E47F7D0025C296 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		32F70EF2238734A3009ED468 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F70EF1238734A3009ED468 /* Helper.swift */; };
 		32F70EF32387352E009ED468 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F70EF1238734A3009ED468 /* Helper.swift */; };
 /* End PBXBuildFile section */
@@ -562,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				328466E123DF6E1C00030B47 /* MainInterface.storyboard in Resources */,
+				32F30F0023E47F7D0025C296 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F30EFF23E463E10025C296 /* TodaySummary.swift in Sources */,
 				328466DE23DF6E1C00030B47 /* NotificationViewController.swift in Sources */,
 				328466EA23DF851A00030B47 /* Helper.swift in Sources */,
 				32ABB62823E1F5ED00714CA5 /* RoundedCornerView.swift in Sources */,

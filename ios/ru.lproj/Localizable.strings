@@ -23,5 +23,10 @@
 "lamination" = "Ламинация";
 
 "Today report title" = "Ежедневный отчет";
-"Today report body" = "Сегодня было %@ человек
+"Today report body" = "Было %@ человек
 На сумму %@";
+"Today" = "Сегодня";
+"Yesterday" = "Вчера";
+"Cash" = "Касса";
+"Client" = "Клиенты";
+"Client value" = "%@ чел.";
