@@ -20,19 +20,19 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 апреля" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5F6-OZ-irw" userLabel="Date">
-                                        <rect key="frame" x="15" y="0.0" width="92" height="22"/>
+                                        <rect key="frame" x="16" y="0.0" width="92" height="22"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="rublesign.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-Ny-etp" userLabel="Cash icon">
-                                        <rect key="frame" x="10" y="33" width="48.5" height="48"/>
+                                        <rect key="frame" x="11" y="33" width="48.5" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wUo-Ny-etp" secondAttribute="height" multiplier="24:25" id="79N-4n-jqd"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Касса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-97-6vK" userLabel="Cash label">
-                                        <rect key="frame" x="63.5" y="37" width="35" height="15"/>
+                                        <rect key="frame" x="64.5" y="37" width="35" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -44,25 +44,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="r8A-Ye-U4S" userLabel="Client icon">
-                                        <rect key="frame" x="181.5" y="33" width="48.5" height="48"/>
+                                        <rect key="frame" x="176" y="33" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="r8A-Ye-U4S" secondAttribute="height" multiplier="24:25" id="fzW-OE-znC"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Клиенты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOi-sq-cUz" userLabel="Client label">
-                                        <rect key="frame" x="235" y="37" width="51" height="15"/>
+                                        <rect key="frame" x="229" y="37" width="51" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 чел." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-eG-dGp" userLabel="Client value">
-                                        <rect key="frame" x="235" y="55.5" width="65" height="22"/>
+                                        <rect key="frame" x="229" y="55.5" width="71" height="22"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vH2-gd-yWS" userLabel="Photo bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="116" width="256" height="16"/>
+                                        <rect key="frame" x="15" y="120" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -75,7 +75,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BMB-uD-sAf" userLabel="Good bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="148" width="256" height="16"/>
+                                        <rect key="frame" x="15" y="152" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
@@ -89,7 +89,7 @@
                                         <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Px8-IG-J1A" userLabel="Copy bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="180" width="256" height="16"/>
+                                        <rect key="frame" x="15" y="184" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
@@ -103,7 +103,7 @@
                                         <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aI9-Xa-LOd" userLabel="Lamination bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="212" width="256" height="16"/>
+                                        <rect key="frame" x="15" y="216" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
@@ -113,7 +113,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Or4-gp-pfm" userLabel="Service bar" customClass="RoundedCornerView" customModule="notification" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="244" width="256" height="16"/>
+                                        <rect key="frame" x="15" y="248" width="256" height="16"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
@@ -131,7 +131,7 @@
                                         <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b0I-qx-u86" userLabel="Photo icon">
-                                        <rect key="frame" x="276" y="114.5" width="24" height="18"/>
+                                        <rect key="frame" x="280" y="118.5" width="24" height="18"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                 </subviews>
@@ -141,7 +141,6 @@
                                     <constraint firstItem="p5Z-5d-Tze" firstAttribute="centerY" secondItem="BMB-uD-sAf" secondAttribute="centerY" id="4se-qb-6Ba"/>
                                     <constraint firstItem="aI9-Xa-LOd" firstAttribute="top" secondItem="Px8-IG-J1A" secondAttribute="bottom" constant="16" id="5Gt-GZ-nQD"/>
                                     <constraint firstItem="BMB-uD-sAf" firstAttribute="top" secondItem="vH2-gd-yWS" secondAttribute="bottom" constant="16" id="5X7-2y-vhr"/>
-                                    <constraint firstItem="b0I-qx-u86" firstAttribute="trailing" secondItem="kyj-eG-dGp" secondAttribute="trailing" id="7e1-V7-peH"/>
                                     <constraint firstItem="gXD-96-CaA" firstAttribute="centerX" secondItem="gWO-dy-pCN" secondAttribute="centerX" id="8YW-pZ-hxu"/>
                                     <constraint firstItem="b0I-qx-u86" firstAttribute="centerY" secondItem="vH2-gd-yWS" secondAttribute="centerY" id="B2Q-Ov-n6W"/>
                                     <constraint firstItem="r8A-Ye-U4S" firstAttribute="trailing" secondItem="kyj-eG-dGp" secondAttribute="leading" constant="-5" id="B8M-X1-LKd"/>
@@ -150,6 +149,7 @@
                                     <constraint firstItem="BMB-uD-sAf" firstAttribute="leading" secondItem="vH2-gd-yWS" secondAttribute="leading" id="GeM-O0-moo"/>
                                     <constraint firstItem="vH2-gd-yWS" firstAttribute="leading" secondItem="5F6-OZ-irw" secondAttribute="leading" id="Gh9-uX-tCv"/>
                                     <constraint firstItem="Px8-IG-J1A" firstAttribute="height" secondItem="BMB-uD-sAf" secondAttribute="height" id="HSf-bv-Nll"/>
+                                    <constraint firstItem="r8A-Ye-U4S" firstAttribute="centerX" secondItem="L7O-w7-Ird" secondAttribute="centerX" constant="40" id="J4d-T8-r47"/>
                                     <constraint firstItem="EOi-sq-cUz" firstAttribute="bottom" secondItem="PJa-97-6vK" secondAttribute="bottom" id="JYG-jB-7cv"/>
                                     <constraint firstItem="PJa-97-6vK" firstAttribute="leading" secondItem="wUo-Ny-etp" secondAttribute="trailing" constant="5" id="KAz-uc-zSZ"/>
                                     <constraint firstItem="aI9-Xa-LOd" firstAttribute="leading" secondItem="Px8-IG-J1A" secondAttribute="leading" id="LHr-1q-X3o"/>
@@ -157,7 +157,7 @@
                                     <constraint firstItem="PpL-7f-UsT" firstAttribute="centerY" secondItem="Px8-IG-J1A" secondAttribute="centerY" id="LU4-jH-l2Y"/>
                                     <constraint firstItem="Px8-IG-J1A" firstAttribute="top" secondItem="BMB-uD-sAf" secondAttribute="bottom" constant="16" id="MSB-yf-odK"/>
                                     <constraint firstItem="PpL-7f-UsT" firstAttribute="centerX" secondItem="p5Z-5d-Tze" secondAttribute="centerX" id="OZu-SG-6Ki"/>
-                                    <constraint firstItem="5F6-OZ-irw" firstAttribute="leading" secondItem="L7O-w7-Ird" secondAttribute="leading" constant="15" id="Ovb-kq-tFT"/>
+                                    <constraint firstItem="5F6-OZ-irw" firstAttribute="leading" secondItem="L7O-w7-Ird" secondAttribute="leading" constant="16" id="Ovb-kq-tFT"/>
                                     <constraint firstItem="r8A-Ye-U4S" firstAttribute="top" secondItem="wUo-Ny-etp" secondAttribute="top" id="QWF-Bf-M8z"/>
                                     <constraint firstItem="PJa-97-6vK" firstAttribute="top" secondItem="wUo-Ny-etp" secondAttribute="top" constant="5" id="SXr-Il-z1P"/>
                                     <constraint firstItem="gWO-dy-pCN" firstAttribute="centerY" secondItem="aI9-Xa-LOd" secondAttribute="centerY" id="VrO-tt-ge9"/>
@@ -172,10 +172,11 @@
                                     <constraint firstItem="kyj-eG-dGp" firstAttribute="bottom" secondItem="W0U-Gn-mlc" secondAttribute="bottom" id="itq-2p-xnB"/>
                                     <constraint firstItem="kyj-eG-dGp" firstAttribute="top" secondItem="W0U-Gn-mlc" secondAttribute="top" id="k3t-iX-vyu"/>
                                     <constraint firstItem="W0U-Gn-mlc" firstAttribute="bottom" secondItem="wUo-Ny-etp" secondAttribute="bottom" constant="-5" id="lLP-H6-4zj"/>
-                                    <constraint firstAttribute="bottom" secondItem="Or4-gp-pfm" secondAttribute="bottom" constant="20" id="msG-hA-g2I"/>
+                                    <constraint firstAttribute="bottom" secondItem="Or4-gp-pfm" secondAttribute="bottom" constant="16" id="msG-hA-g2I"/>
                                     <constraint firstItem="EOi-sq-cUz" firstAttribute="top" secondItem="PJa-97-6vK" secondAttribute="top" id="noQ-9l-HcO"/>
                                     <constraint firstItem="wUo-Ny-etp" firstAttribute="top" secondItem="5F6-OZ-irw" secondAttribute="bottom" constant="10" id="sTM-Tl-DGc"/>
                                     <constraint firstItem="aI9-Xa-LOd" firstAttribute="height" secondItem="Px8-IG-J1A" secondAttribute="height" id="siK-97-fzf"/>
+                                    <constraint firstAttribute="trailing" secondItem="b0I-qx-u86" secondAttribute="trailing" constant="16" id="uJD-uQ-6zP"/>
                                     <constraint firstItem="EOi-sq-cUz" firstAttribute="leading" secondItem="kyj-eG-dGp" secondAttribute="leading" id="xeA-9H-u0Y"/>
                                     <constraint firstItem="Or4-gp-pfm" firstAttribute="leading" secondItem="aI9-Xa-LOd" secondAttribute="leading" id="zsx-po-OFC"/>
                                 </constraints>
