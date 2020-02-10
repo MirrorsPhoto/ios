@@ -63,6 +63,7 @@
 		32EA7F1E23A2BF9C00C7625D /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7F1C23A2BE3000C7625D /* WebSocketConnection.swift */; };
 		32ECBD5023D9FDBD00073415 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ECBD4F23D9FDBD00073415 /* PushNotification.swift */; };
 		32F102FD23F1AAD000AD2FDA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
+		32F102FE23F1B88600AD2FDA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		32F30EFF23E463E10025C296 /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
 		32F30F0023E47F7D0025C296 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		32F70EF2238734A3009ED468 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F70EF1238734A3009ED468 /* Helper.swift */; };
@@ -559,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				321BE6772381D0B6008750A9 /* MainInterface.storyboard in Resources */,
+				32F102FE23F1B88600AD2FDA /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

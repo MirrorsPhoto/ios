@@ -15,13 +15,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     private var token: String? = nil
     private var isAuth: Bool = false
     
-    @IBOutlet weak var cashCard: RoundedCornerView!
-    @IBOutlet weak var clientCard: RoundedCornerView!
-    
-    @IBOutlet weak var cashLabel: UILabel!
-    @IBOutlet weak var clientLabel: UILabel!
-    
     @IBOutlet weak var signIn: UIButton!
+    
+    @IBOutlet weak var cashIcon: UIImageView!
+    @IBOutlet weak var cashLabel: UILabel!
+    @IBOutlet weak var cashValue: UILabel!
+    @IBOutlet weak var clientIcon: UIImageView!
+    @IBOutlet weak var clientLabel: UILabel!
+    @IBOutlet weak var clientValue: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,11 +90,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func updateWidget(cash: Int, client: Int) {
-        self.cashCard.isHidden = false
-        self.clientCard.isHidden = false
-        
-        self.cashLabel.text = Helper.formatCurrency(cash)
-        self.clientLabel.text = Helper.formatNumber(client)
+        self.cashIcon.isHidden = false
+        self.cashLabel.isHidden = false
+        self.cashValue.isHidden = false
+        self.clientIcon.isHidden = false
+        self.clientLabel.isHidden = false
+        self.clientValue.isHidden = false
+
+        self.cashValue.text = Helper.formatCurrency(cash)
+        self.clientValue.text = String.localizedStringWithFormat(NSLocalizedString("Client value", comment: ""), String(client))
     }
     
 }

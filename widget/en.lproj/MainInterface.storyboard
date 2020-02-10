@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,88 +15,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-Tz-LiT" userLabel="Sign in">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="53 чел." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnn-hr-new" userLabel="Client value">
+                                <rect key="frame" x="124" y="44" width="71" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Касса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VW-96-Q7V" userLabel="Cash label">
+                                <rect key="frame" x="142" y="47" width="35" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="6 450 Р" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhh-bZ-WE4" userLabel="Cash value">
+                                <rect key="frame" x="126" y="44" width="68" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Клиенты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJK-YJ-Kgm" userLabel="Client label">
+                                <rect key="frame" x="134" y="47" width="51" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="rublesign.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BOT-3E-RhV" userLabel="Cash icon">
+                                <rect key="frame" x="16" y="53" width="48" height="47.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aG8-75-QsK"/>
+                                    <constraint firstAttribute="width" secondItem="BOT-3E-RhV" secondAttribute="height" multiplier="24:25" id="fkt-vw-TVn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Dr-w6-da4" userLabel="Client icon">
+                                <rect key="frame" x="176" y="53" width="48" height="47.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4Dr-w6-da4" secondAttribute="height" multiplier="24:25" id="a2e-qi-Aa6"/>
+                                    <constraint firstAttribute="height" constant="50" id="h2G-ua-zuw"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-Tz-LiT" userLabel="Sign in">
                                 <rect key="frame" x="110.5" y="50.5" width="99" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="mh8-Ix-6Sg"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdj-IO-Swc" userLabel="Cash" customClass="RoundedCornerView" customModule="widget" customModuleProvider="target">
-                                <rect key="frame" x="102" y="60.5" width="208" height="33"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥬" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqY-Cl-MDe" userLabel="Emoji">
-                                        <rect key="frame" x="10" y="5" width="38" height="23"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPS-M0-8iT">
-                                        <rect key="frame" x="198" y="5" width="0.0" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="wPS-M0-8iT" firstAttribute="top" secondItem="Xdj-IO-Swc" secondAttribute="top" constant="5" id="LBI-eP-TKt"/>
-                                    <constraint firstItem="wPS-M0-8iT" firstAttribute="bottom" secondItem="Xdj-IO-Swc" secondAttribute="bottom" constant="-5" id="U7C-FJ-akB"/>
-                                    <constraint firstItem="hqY-Cl-MDe" firstAttribute="bottom" secondItem="Xdj-IO-Swc" secondAttribute="bottom" constant="-5" id="p3O-u6-dGd"/>
-                                    <constraint firstItem="wPS-M0-8iT" firstAttribute="trailing" secondItem="Xdj-IO-Swc" secondAttribute="trailing" constant="-10" id="t0j-nJ-Vml"/>
-                                    <constraint firstItem="hqY-Cl-MDe" firstAttribute="top" secondItem="Xdj-IO-Swc" secondAttribute="top" constant="5" id="xxT-fv-lpq"/>
-                                    <constraint firstItem="hqY-Cl-MDe" firstAttribute="leading" secondItem="Xdj-IO-Swc" secondAttribute="leading" constant="10" id="ygb-Ub-fx3"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-as-BdN" userLabel="Client" customClass="RoundedCornerView" customModule="widget" customModuleProvider="target">
-                                <rect key="frame" x="10" y="60.5" width="112" height="33"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🧟‍♀️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRE-ph-ybT" userLabel="Emoji">
-                                        <rect key="frame" x="10" y="5" width="38" height="23"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8S-w3-fT3">
-                                        <rect key="frame" x="102" y="5" width="0.0" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="TRE-ph-ybT" firstAttribute="top" secondItem="3ww-as-BdN" secondAttribute="top" constant="5" id="30X-BG-HSb"/>
-                                    <constraint firstItem="TRE-ph-ybT" firstAttribute="bottom" secondItem="3ww-as-BdN" secondAttribute="bottom" constant="-5" id="Ibk-eW-DgW"/>
-                                    <constraint firstItem="u8S-w3-fT3" firstAttribute="top" secondItem="3ww-as-BdN" secondAttribute="top" constant="5" id="Qio-Ms-UZz"/>
-                                    <constraint firstItem="u8S-w3-fT3" firstAttribute="bottom" secondItem="3ww-as-BdN" secondAttribute="bottom" constant="-5" id="klc-CA-mEK"/>
-                                    <constraint firstItem="u8S-w3-fT3" firstAttribute="trailing" secondItem="3ww-as-BdN" secondAttribute="trailing" constant="-10" id="l6Z-PQ-eNP"/>
-                                    <constraint firstItem="TRE-ph-ybT" firstAttribute="leading" secondItem="3ww-as-BdN" secondAttribute="leading" constant="10" id="ssS-z2-JWQ"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="3ww-as-BdN" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="10" id="1SE-K5-I6W"/>
-                            <constraint firstItem="Xdj-IO-Swc" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="6kR-cq-9bN"/>
-                            <constraint firstItem="pbC-Tz-LiT" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="Djp-5y-6GG"/>
-                            <constraint firstItem="3ww-as-BdN" firstAttribute="height" secondItem="ssy-KU-ocm" secondAttribute="height" multiplier="0.5" id="Fr0-w6-omK"/>
-                            <constraint firstItem="Xdj-IO-Swc" firstAttribute="width" secondItem="ssy-KU-ocm" secondAttribute="width" multiplier="0.55" id="IKz-1F-Ua2"/>
-                            <constraint firstItem="Xdj-IO-Swc" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" constant="-10" id="Lmv-NL-gML"/>
-                            <constraint firstItem="Xdj-IO-Swc" firstAttribute="height" secondItem="ssy-KU-ocm" secondAttribute="height" multiplier="0.5" id="Mlq-gP-OSv"/>
-                            <constraint firstItem="3ww-as-BdN" firstAttribute="width" secondItem="ssy-KU-ocm" secondAttribute="width" multiplier="0.35" id="PSR-aE-0q9"/>
-                            <constraint firstItem="3ww-as-BdN" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="XHw-V4-Dvt"/>
-                            <constraint firstItem="pbC-Tz-LiT" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="d5D-zr-NyW"/>
+                            <constraint firstItem="Vnn-hr-new" firstAttribute="leading" secondItem="aJK-YJ-Kgm" secondAttribute="leading" id="06d-N2-nUd"/>
+                            <constraint firstItem="aJK-YJ-Kgm" firstAttribute="top" secondItem="4Dr-w6-da4" secondAttribute="top" constant="5" id="3Of-Ov-kmQ"/>
+                            <constraint firstItem="aJK-YJ-Kgm" firstAttribute="leading" secondItem="4Dr-w6-da4" secondAttribute="trailing" constant="5" id="AAK-eY-cui"/>
+                            <constraint firstItem="Vnn-hr-new" firstAttribute="bottom" secondItem="4Dr-w6-da4" secondAttribute="bottom" constant="-5" id="MM5-ul-csq"/>
+                            <constraint firstItem="zhh-bZ-WE4" firstAttribute="leading" secondItem="2VW-96-Q7V" secondAttribute="leading" id="OJe-5L-H1e"/>
+                            <constraint firstItem="zhh-bZ-WE4" firstAttribute="bottom" secondItem="BOT-3E-RhV" secondAttribute="bottom" constant="-5" id="Sz7-XK-lTQ"/>
+                            <constraint firstItem="BOT-3E-RhV" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="UzQ-nY-kEn"/>
+                            <constraint firstItem="2VW-96-Q7V" firstAttribute="top" secondItem="BOT-3E-RhV" secondAttribute="top" constant="5" id="YRN-0h-jH8"/>
+                            <constraint firstItem="BOT-3E-RhV" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="eTZ-ca-3jn"/>
+                            <constraint firstItem="4Dr-w6-da4" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" constant="40" id="fax-Fp-t40"/>
+                            <constraint firstItem="2VW-96-Q7V" firstAttribute="leading" secondItem="BOT-3E-RhV" secondAttribute="trailing" constant="5" id="nHy-MS-Ygt"/>
+                            <constraint firstItem="4Dr-w6-da4" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="pHz-sd-11g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -104,10 +83,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="110"/>
                     <connections>
-                        <outlet property="cashCard" destination="Xdj-IO-Swc" id="nsA-oc-Are"/>
-                        <outlet property="cashLabel" destination="wPS-M0-8iT" id="pq2-Wj-dCl"/>
-                        <outlet property="clientCard" destination="3ww-as-BdN" id="jZL-M9-wJn"/>
-                        <outlet property="clientLabel" destination="u8S-w3-fT3" id="YBO-dg-mcE"/>
+                        <outlet property="cashLabel" destination="2VW-96-Q7V" id="EA9-xd-P53"/>
+                        <outlet property="cashValue" destination="zhh-bZ-WE4" id="6kg-mn-3Ih"/>
+                        <outlet property="cashIcon" destination="BOT-3E-RhV" id="6OB-dr-zsZ"/>
+                        <outlet property="clientIcon" destination="4Dr-w6-da4" id="qv1-ld-8PV"/>
+                        <outlet property="clientLabel" destination="aJK-YJ-Kgm" id="Hn9-CI-V0w"/>
+                        <outlet property="clientValue" destination="Vnn-hr-new" id="42Q-5i-GlK"/>
                         <outlet property="signIn" destination="pbC-Tz-LiT" id="BNP-IB-7oU"/>
                     </connections>
                 </viewController>
@@ -116,4 +97,8 @@
             <point key="canvasLocation" x="139" y="108"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.crop.square" catalog="system" width="64" height="56"/>
+        <image name="rublesign.square" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
