@@ -13,49 +13,48 @@ struct UserDetailView: View {
     
     @ObservedObject var sessionManager: SessionManager
     
-    @Binding var showUserDetailModal: Bool
-    
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!, imageRenderingMode: .original)
-                        .scaledToFit()
-                        .clipShape(Circle())
-                        .frame(height: 100)
-                    Spacer()
-                    VStack {
-                        Text(verbatim: sessionManager.user!.firstName)
-                            .font(.title)
-                        Text(verbatim: sessionManager.user!.lastName)
-                            .font(.title)
-                        Text(verbatim: sessionManager.user!.email)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+            ScrollView {
+                VStack {
+                    HStack {
+                        RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!, imageRenderingMode: .original)
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .frame(height: 100)
+                        Spacer()
+                        VStack {
+                            Text(verbatim: sessionManager.user!.firstName)
+                                .font(.title)
+                            Text(verbatim: sessionManager.user!.lastName)
+                                .font(.title)
+                            Text(verbatim: sessionManager.user!.email)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
                     }
                     Spacer()
+                    if sessionManager.user!.sub == nil {
+                        ContinueWithAppleButton(sessionManager: sessionManager)
+                            .frame(width: 200, height: 50)
+                    }
                 }
-                Spacer()
-                if sessionManager.user!.sub == nil {
-                    ContinueWithAppleButton(sessionManager: sessionManager)
-                        .frame(width: 200, height: 50)
-                }
+                .navigationBarTitle(Text(verbatim: sessionManager.user!.username))
+                .navigationBarItems(
+                    trailing:
+                        Button(action: {
+                            self.logOut()
+                        }) {
+                            Text("Logout").foregroundColor(Color.red)
+                    }
+                )
+                .padding()
             }
-            .navigationBarTitle(Text(verbatim: sessionManager.user!.username))
-            .navigationBarItems(
-                trailing:
-                    Button(action: {
-                        self.logOut()
-                    }) {
-                        Text("Logout").foregroundColor(Color.red)
-                }
-            )
-            .padding()
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func logOut() {
-//        self.showUserDetailModal.toggle()
         PushNotification.unregisterDeviceToken()
         sessionManager.logOut()
     }

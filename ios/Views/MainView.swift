@@ -13,43 +13,20 @@ struct MainView: View {
     
     @ObservedObject var sessionManager: SessionManager
     
-    @State private var showUserDetailModal = false
-    
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    HStack {
-                        NumberCardView(text: "🧟‍♀️",  number: self.sessionManager.todaySummary.client.today, formatter: Helper.formatNumber)
-                        NumberCardView(text: "🥬", number: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
-                    }
-                    CardView {
-                        PieChartView(data: self.sessionManager.todaySummary.cash.today)
-                            .frame(height: 200)
-                    }
+        TabView() {
+            DashboardView(sessionManager: sessionManager)
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Dashboard")
                 }
-                Spacer()
-            }
-            .padding([.horizontal])
-            .navigationBarTitle(Text("Dashboard"))
-            .navigationBarItems(
-                trailing: Button(action: {
-                    self.showUserDetailModal.toggle()
-                }) {
-                        HStack {
-                            Spacer()
-                            RemoteImageView(url: URL(string: sessionManager.user!.avatar!)!, imageRenderingMode: .original)
-                                .scaledToFit()
-                                .clipShape(Circle())
-                            Spacer()
-                        }
-                        .frame(width: 50, height: 50)
+            UserDetailView(sessionManager: sessionManager)
+                .tabItem {
+                    Image(systemName: "person")
+                    Text(verbatim: sessionManager.user!.username)
                 }
-            )
-                .sheet(isPresented: self.$showUserDetailModal) {
-                    UserDetailView(sessionManager: self.sessionManager, showUserDetailModal: self.$showUserDetailModal)
-            }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
