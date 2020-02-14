@@ -20,6 +20,11 @@ struct MainView: View {
                     Image(systemName: "house")
                     Text("Dashboard")
                 }
+            GoodsView(sessionManager: sessionManager)
+                .tabItem {
+                    Image(systemName: "bag")
+                    Text("Goods")
+                }
             UserDetailView(sessionManager: sessionManager)
                 .tabItem {
                     Image(systemName: "person")
