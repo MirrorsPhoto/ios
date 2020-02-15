@@ -42,6 +42,7 @@
 		329D26FD237DDDF900751025 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26FC237DDDF900751025 /* SessionManager.swift */; };
 		329D2705237E92DF00751025 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D2704237E92DE00751025 /* User.swift */; };
 		32ABB62823E1F5ED00714CA5 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278912B238447EC00D21A3D /* RoundedCornerView.swift */; };
+		32C026AD23F6D3C2007E7427 /* GoodAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C026AC23F6D3C2007E7427 /* GoodAddView.swift */; };
 		32C8CACD23F17701000DCB48 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C8CACC23F17701000DCB48 /* DashboardView.swift */; };
 		32E5B64023A53CCF0055719B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D2704237E92DE00751025 /* User.swift */; };
 		32EA7ED123A27CEA00C7625D /* JWT in Frameworks */ = {isa = PBXBuildFile; productRef = 32EA7ED023A27CEA00C7625D /* JWT */; };
@@ -65,6 +66,7 @@
 		32EA7F1D23A2BE3000C7625D /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7F1C23A2BE3000C7625D /* WebSocketConnection.swift */; };
 		32EA7F1E23A2BF9C00C7625D /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7F1C23A2BE3000C7625D /* WebSocketConnection.swift */; };
 		32ECBD5023D9FDBD00073415 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ECBD4F23D9FDBD00073415 /* PushNotification.swift */; };
+		32F0941E23F6C95000D334A1 /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = 32F0941D23F6C95000D334A1 /* CarBode */; };
 		32F102FD23F1AAD000AD2FDA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26E5237DDD2700751025 /* RootView.swift */; };
 		32F102FE23F1B88600AD2FDA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		32F102FF23F1D24D00AD2FDA /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
@@ -181,6 +183,7 @@
 		329D26FC237DDDF900751025 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		329D2701237DF37900751025 /* ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios.entitlements; sourceTree = "<group>"; };
 		329D2704237E92DE00751025 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		32C026AC23F6D3C2007E7427 /* GoodAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAddView.swift; sourceTree = "<group>"; };
 		32C8CACC23F17701000DCB48 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		32EA7ED623A2847200C7625D /* watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32EA7ED923A2847200C7625D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32EA7ED123A27CEA00C7625D /* JWT in Frameworks */,
+				32F0941E23F6C95000D334A1 /* CarBode in Frameworks */,
 				32935E3923A27A1C00817678 /* Alamofire in Frameworks */,
 				321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */,
 				321D3060237EBBC8003780D6 /* SwURL in Frameworks */,
@@ -329,6 +333,7 @@
 		329D26F5237DDD6C00751025 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32C026AB23F6D397007E7427 /* Goods */,
 				328466C823DDDC2E00030B47 /* UI */,
 				329D26E5237DDD2700751025 /* RootView.swift */,
 				329D26F7237DDDB200751025 /* AuthView.swift */,
@@ -337,8 +342,6 @@
 				3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */,
 				3223079623A6AFD5008CDE0B /* ContinueWithAppleButton.swift */,
 				32C8CACC23F17701000DCB48 /* DashboardView.swift */,
-				329CC0B823F306F60002B45F /* GoodsView.swift */,
-				329CC0BC23F313C60002B45F /* GoodView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,6 +373,16 @@
 				329CC0BA23F309CB0002B45F /* Goods.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		32C026AB23F6D397007E7427 /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				329CC0B823F306F60002B45F /* GoodsView.swift */,
+				329CC0BC23F313C60002B45F /* GoodView.swift */,
+				32C026AC23F6D3C2007E7427 /* GoodAddView.swift */,
+			);
+			path = Goods;
 			sourceTree = "<group>";
 		};
 		32EA7ED723A2847200C7625D /* watch */ = {
@@ -466,6 +479,7 @@
 				321D305F237EBBC8003780D6 /* SwURL */,
 				32935E3823A27A1C00817678 /* Alamofire */,
 				32EA7ED023A27CEA00C7625D /* JWT */,
+				32F0941D23F6C95000D334A1 /* CarBode */,
 			);
 			productName = ios;
 			productReference = 329D26DE237DDD2700751025 /* Mirrors Photo.app */;
@@ -550,6 +564,7 @@
 				321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */,
 				32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				32EA7ECF23A27CEA00C7625D /* XCRemoteSwiftPackageReference "JSONWebToken.swift" */,
+				32F0941C23F6C95000D334A1 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
 			);
 			productRefGroup = 329D26DF237DDD2700751025 /* Products */;
 			projectDirPath = "";
@@ -644,6 +659,7 @@
 				32ECBD5023D9FDBD00073415 /* PushNotification.swift in Sources */,
 				329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */,
 				321D3084237FF70E003780D6 /* NumberCardView.swift in Sources */,
+				32C026AD23F6D3C2007E7427 /* GoodAddView.swift in Sources */,
 				329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */,
 				32EA7F1423A2957200C7625D /* MainView.swift in Sources */,
 				32F70EF2238734A3009ED468 /* Helper.swift in Sources */,
@@ -1190,6 +1206,14 @@
 				kind = branch;
 			};
 		};
+		32F0941C23F6C95000D334A1 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1222,6 +1246,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		32F0941D23F6C95000D334A1 /* CarBode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32F0941C23F6C95000D334A1 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */;
+			productName = CarBode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

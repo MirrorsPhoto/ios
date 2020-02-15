@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "CarBode",
+        "repositoryURL": "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI",
+        "state": {
+          "branch": null,
+          "revision": "5168c72b9253bad5ae313c954db2b56edc86fe90",
+          "version": "1.3.0"
+        }
+      },
+      {
         "package": "JWT",
         "repositoryURL": "https://github.com/kylef/JSONWebToken.swift.git",
         "state": {
