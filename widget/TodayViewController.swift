@@ -124,15 +124,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func setBarWidth(_ today: Today) {
         let viewMultiplier = 0.8
         let childrens = Mirror(reflecting: today).children
+        var data = [Int: String]()
         var prevBar: RoundedCornerView?
         let sum: Double = Double(today.sum())
         
         for (_, attr) in childrens.enumerated() {
-            var bar: RoundedCornerView?
-            var icon: UIImageView?
             let value = attr.value as? Int
             
-            if value == nil {
+            if value == nil || value == 0 {
                 continue;
             }
             
@@ -140,6 +139,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if name == "total" || name == "printing" {
                 continue
             }
+            
+            data.updateValue(name, forKey: value!)
+        }
+        
+        for (value, name) in data.sorted(by: >) {
+            var bar: RoundedCornerView?
+            var icon: UIImageView?
             
             switch name {
                 case "photo":
@@ -161,11 +167,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     break
             }
             
-            let percent: Double = sum != 0 ? viewMultiplier * Double(value!) / sum : 0.0
+            let percent: Double = sum != 0 ? viewMultiplier * Double(value) / sum : 0.0
             
-            let constraint = NSLayoutConstraint(item: bar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(percent), constant: 0)
+            self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(percent), constant: 0))
             
-            self.view.addConstraint(constraint)
+            if prevBar == nil {
+                self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: self.cashIcon, attribute: .bottom, multiplier: 1, constant: 48))
+            } else {
+                self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: prevBar, attribute: .bottom, multiplier: 1, constant: 16))
+            }
+            
+            prevBar = bar!
             
             bar!.isHidden = false
             icon!.isHidden = false

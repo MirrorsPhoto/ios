@@ -12,6 +12,8 @@ import UserNotificationsUI
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
     
+    @IBOutlet weak var cashIcon: UIImageView!
+    
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var cash: UILabel!
     @IBOutlet weak var client: UILabel!
@@ -24,6 +26,13 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     @IBOutlet weak var copyBar: RoundedCornerView!
     @IBOutlet weak var laminationBar: RoundedCornerView!
     @IBOutlet weak var serviceBar: RoundedCornerView!
+    
+    @IBOutlet weak var photoIcon: UIImageView!
+    @IBOutlet weak var goodIcon: UIImageView!
+    @IBOutlet weak var copyIcon: UIImageView!
+    @IBOutlet weak var laminationIcon: UIImageView!
+    @IBOutlet weak var serviceIcon: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,14 +68,14 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     func setBarWidth(_ today: Today) {
         let viewMultiplier = 0.8
         let childrens = Mirror(reflecting: today).children
+        var data = [Int: String]()
         var prevBar: RoundedCornerView?
         let sum: Double = Double(today.sum())
         
         for (_, attr) in childrens.enumerated() {
-            var bar: RoundedCornerView?
             let value = attr.value as? Int
             
-            if value == nil {
+            if value == nil || value == 0 {
                 continue;
             }
             
@@ -75,26 +84,47 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
                 continue
             }
             
+            data.updateValue(name, forKey: value!)
+        }
+        
+        for (value, name) in data.sorted(by: >) {
+            var bar: RoundedCornerView?
+            var icon: UIImageView?
+            
             switch name {
                 case "photo":
                     bar = photoBar
+                    icon = photoIcon
                 case "good":
                     bar = goodBar
+                    icon = goodIcon
                 case "copy":
                     bar = copyBar
+                    icon = copyIcon
                 case "lamination":
                     bar = laminationBar
+                    icon = laminationIcon
                 case "service":
                     bar = serviceBar
+                    icon = serviceIcon
                 default:
                     break
             }
             
-            let percent: Double = sum != 0 ? viewMultiplier * Double(value!) / sum : 0.0
+            let percent: Double = sum != 0 ? viewMultiplier * Double(value) / sum : 0.0
             
-            let constraint = NSLayoutConstraint(item: bar, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(percent), constant: 0)
+            self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(percent), constant: 0))
             
-            self.view.addConstraint(constraint)
+            if prevBar == nil {
+                self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: self.cashIcon, attribute: .bottom, multiplier: 1, constant: 48))
+            } else {
+                self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: prevBar, attribute: .bottom, multiplier: 1, constant: 16))
+            }
+            
+            prevBar = bar!
+            
+            bar!.isHidden = false
+            icon!.isHidden = false
         }
     }
     
