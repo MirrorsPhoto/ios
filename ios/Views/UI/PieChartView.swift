@@ -19,18 +19,23 @@ struct PieChartView: View {
         let childrens = Mirror(reflecting: self.data).children
         
         for (_, attr) in childrens.enumerated() {
-            let value = attr.value as! Int
+            let value = attr.value as? Int
+            
+            if value == nil {
+                continue;
+            }
+            
             let name = attr.label!
             if name == "total" || name == "printing" {
                 continue
             }
-            let percent: Double = sum != 0 ? Double(value) / Double(sum) : 1.0 / Double(childrens.count - 2) // Минус 2 потому, что исключаем total и printing
+            let percent: Double = sum != 0 ? Double(value!) / Double(sum) : 1.0 / Double(childrens.count - 2) // Минус 2 потому, что исключаем total и printing
             
             let startDeg = lastEndDeg
             let endDeg = lastEndDeg + (percent * 360)
             lastEndDeg = endDeg
             
-            result.append(PieSlice(startDeg: startDeg, endDeg: endDeg, value: Int(value), percent: percent, name: name))
+            result.append(PieSlice(startDeg: startDeg, endDeg: endDeg, value: value!, percent: percent, name: name))
         }
         
         return result

@@ -18,6 +18,7 @@ class User {
     var email: String
     var avatar: String?
     var sub: String?
+    var allowedTypes: [String]
     
     init(data: ClaimSet?) {
         self.id = data?["id"] as! Int
@@ -30,5 +31,6 @@ class User {
         self.email = data?["email"] as! String
         self.avatar = data?["avatar"] as? String
         self.sub = data?["apple_sub"] as? String
+        self.allowedTypes = data?["allowed_types"] as! [String]
     }
 }

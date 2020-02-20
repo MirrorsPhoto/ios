@@ -58,33 +58,41 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
     func setBarWidth(_ today: Today) {
         let viewMultiplier = 0.8
-        let todayTotal = Double(today.total)
+        let childrens = Mirror(reflecting: today).children
+        var prevBar: RoundedCornerView?
+        let sum: Double = Double(today.sum())
         
-        let items = [
-            [
-                "view": self.photoBar!,
-                "multiplier": todayTotal != 0.0 ? viewMultiplier * Double(today.photo) / todayTotal : 0.0
-            ],
-            [
-                "view": self.goodBar!,
-                "multiplier": todayTotal != 0.0 ? viewMultiplier * Double(today.good) / todayTotal : 0.0
-            ],
-            [
-                "view": self.copyBar!,
-                "multiplier": todayTotal != 0.0 ? viewMultiplier * Double(today.copy) / todayTotal : 0.0
-            ],
-            [
-                "view": self.laminationBar!,
-                "multiplier": todayTotal != 0.0 ? viewMultiplier * Double(today.lamination) / todayTotal : 0.0
-            ],
-            [
-                "view": self.serviceBar!,
-                "multiplier": todayTotal != 0.0 ? viewMultiplier * Double(today.service) / todayTotal : 0.0
-            ]
-        ]
-        
-        for item in items {
-            let constraint = NSLayoutConstraint(item: item["view"]!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(item["multiplier"] as! Double), constant: 0)
+        for (_, attr) in childrens.enumerated() {
+            var bar: RoundedCornerView?
+            let value = attr.value as? Int
+            
+            if value == nil {
+                continue;
+            }
+            
+            let name = attr.label!
+            if name == "total" || name == "printing" {
+                continue
+            }
+            
+            switch name {
+                case "photo":
+                    bar = photoBar
+                case "good":
+                    bar = goodBar
+                case "copy":
+                    bar = copyBar
+                case "lamination":
+                    bar = laminationBar
+                case "service":
+                    bar = serviceBar
+                default:
+                    break
+            }
+            
+            let percent: Double = sum != 0 ? viewMultiplier * Double(value!) / sum : 0.0
+            
+            let constraint = NSLayoutConstraint(item: bar, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(percent), constant: 0)
             
             self.view.addConstraint(constraint)
         }
