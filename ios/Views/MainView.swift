@@ -18,16 +18,19 @@ struct MainView: View {
             DashboardView(sessionManager: sessionManager)
                 .tabItem {
                     Image(systemName: "house")
+                        .font(.headline)
                     Text("Dashboard")
                 }
             GoodsView(sessionManager: sessionManager)
                 .tabItem {
                     Image(systemName: "bag")
+                        .font(.headline)
                     Text("Goods")
                 }
             UserDetailView(sessionManager: sessionManager)
                 .tabItem {
                     Image(systemName: "person")
+                        .font(.headline)
                     Text(verbatim: sessionManager.user!.username)
                 }
         }
