@@ -17,12 +17,14 @@ struct GoodView: View {
             Text("Name: \(good.name)")
             Text("Description: \(good.description)")
             Text("Price: \(good.price)")
+            Text("Available: \(good.available)")
+            Text("Barcode: \(good.bar_code ?? "")")
         }
     }
 }
 
 struct GoodView_Previews: PreviewProvider {
     static var previews: some View {
-        GoodView(good: Good(id: 1, name: "Test", description: "Description", price: 123))
+        GoodView(good: Good(id: 1, name: "Test", description: "Description", bar_code: "12312312", price: 123, available: 1))
     }
 }
