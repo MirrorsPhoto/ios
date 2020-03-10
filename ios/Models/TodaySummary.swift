@@ -32,16 +32,17 @@ class Cash: Codable {
 
 // MARK: - Today
 class Today: NSObject, Codable {
-    var photo, good, copy, lamination, printing, service: Int?
+    var photo, good, copy, lamination, printing, service, document: Int?
     var total: Int
 
-    init(photo: Int? = nil, good: Int? = nil, copy: Int? = nil, lamination: Int? = nil, printing: Int? = nil, service: Int? = nil, total: Int = 0) {
+    init(photo: Int? = nil, good: Int? = nil, copy: Int? = nil, lamination: Int? = nil, printing: Int? = nil, service: Int? = nil, document: Int? = nil, total: Int = 0) {
         self.photo = photo
         self.good = good
         self.copy = copy
         self.lamination = lamination
         self.printing = printing
         self.service = service
+        self.document = document
         self.total = total
     }
     
