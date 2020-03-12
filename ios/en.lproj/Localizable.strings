@@ -8,6 +8,12 @@
 
 "Error" = "Error";
 "Ok" = "Ok";
+"Done" = "Done";
+"Cancel" = "Cancel";
+"Name" = "Name";
+"Description" = "Description";
+"Barcode" = "Barcode";
+"Price" = "Price";
 
 "Sign in" = "Sign in";
 "Authorization" = "Authorization";
@@ -31,3 +37,5 @@ For the amount %@";
 "Cash" = "Cash";
 "Client" = "Client";
 "Client value" = "%@ per.";
+
+"Add good" = "Add good";
