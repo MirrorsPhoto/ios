@@ -35,7 +35,7 @@ class Today: NSObject, Codable {
     var photo, good, copy, lamination, printing, service, document: Int?
     var total: Int
 
-    init(photo: Int? = nil, good: Int? = nil, copy: Int? = nil, lamination: Int? = nil, printing: Int? = nil, service: Int? = nil, document: Int? = nil, total: Int = 0) {
+    init(photo: Int = 0, good: Int = 0, copy: Int = 0, lamination: Int = 0, printing: Int = 0, service: Int = 0, document: Int = 0, total: Int = 0) {
         self.photo = photo
         self.good = good
         self.copy = copy

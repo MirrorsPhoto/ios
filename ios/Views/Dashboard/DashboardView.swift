@@ -21,10 +21,6 @@ struct DashboardView: View {
         for (_, attr) in childrens.enumerated() {
             let value = attr.value as? Int
             
-            if value == nil || value == 0 {
-                continue;
-            }
-            
             let name = attr.label!
             if name == "total" {
                 continue

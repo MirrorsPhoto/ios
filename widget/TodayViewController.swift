@@ -113,7 +113,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             return
         }
         
-        let today = Today(photo: cashToday["photo"], good: cashToday["good"], copy: cashToday["copy"], lamination: cashToday["lamination"], printing: cashToday["printing"], service: cashToday["service"], total: cashToday["total"]!)
+        let today = Today(photo: cashToday["photo"] ?? 0, good: cashToday["good"] ?? 0, copy: cashToday["copy"] ?? 0, lamination: cashToday["lamination"] ?? 0, printing: cashToday["printing"] ?? 0, service: cashToday["service"] ?? 0, total: cashToday["total"] ?? 0)
         
         
         setCash(today.total)

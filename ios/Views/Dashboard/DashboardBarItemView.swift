@@ -12,16 +12,18 @@ struct DashboardBarItemView: View {
     let bar: DashboardBarItem
     
     var body: some View {
-        HStack(alignment: .center) {
-            GeometryReader { geometry in
-                RoundedRectangle(cornerRadius: 3)
+        HStack() {
+            if self.bar.percent > 0 {
+                GeometryReader { geometry in
+                    RoundedRectangle(cornerRadius: 3)
+                        .foregroundColor(self.bar.color)
+                        .frame(width: geometry.size.width * CGFloat(self.bar.percent) / 100.0, height: 16)
+                }
+                Spacer()
+                self.bar.icon
                     .foregroundColor(self.bar.color)
-                    .frame(width: geometry.size.width * CGFloat(self.bar.percent) / 100.0, height: 16)
+                    .font(.subheadline)
             }
-            Spacer()
-            self.bar.icon
-                .foregroundColor(self.bar.color)
-                .font(.subheadline)
         }
     }
 }

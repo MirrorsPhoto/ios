@@ -60,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        guard let socket = manager.socket else {
+        guard manager.socket != nil else {
             return
         }
         
@@ -72,7 +72,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        guard let socket = manager.socket else {
+        guard manager.socket != nil else {
             return
         }
         

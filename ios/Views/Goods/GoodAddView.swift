@@ -99,7 +99,7 @@ struct GoodAddView: View {
         
         Alamofire.request("http://api.mirrors-photo.ru/good/add", method: .post, parameters: parameters, headers: headers).responseJSON { (response) in
             switch response.result {
-            case let .failure(error):
+            case .failure(_):
                 self.pendingRequest = false
                 self.showingAlert = true
                 self.alertText = "Invalid information received from service"
