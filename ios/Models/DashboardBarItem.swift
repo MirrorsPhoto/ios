@@ -21,10 +21,10 @@ class DashboardBarItem: Identifiable {
         switch type {
         case "photo":
             color = .red
-            iconName = "cart"
+            iconName = "camera"
         case "good":
             color = .orange
-            iconName = "camera"
+            iconName = "cart"
         case "lamination":
             color = .blue
             iconName = "square.stack"
