@@ -20,7 +20,7 @@ class GoodsResponse: Codable {
 struct Good: Codable, Identifiable {
     let id: Int
     let name: String
-    let description: String
+    let description: String?
     let bar_code: String?
     let price: Int
     let available: Int
