@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import BarcodeView
 
 struct GoodView: View {
     
@@ -15,11 +16,27 @@ struct GoodView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Name: \(good.name)")
-            Text("Description: \(good.description)")
+            Text("Description: \(good.description ?? "")")
             Text("Price: \(good.price)")
             Text("Available: \(good.available)")
-            Text("Barcode: \(good.bar_code ?? "")")
+            if self.generateBarCode() != nil {
+                self.generateBarCode().frame(height: 120)
+            } else {
+                Text("Barcode: \(good.bar_code ?? "")")
+            }
         }
+    }
+    
+    func generateBarCode() -> BarcodeView? {
+        guard let barcodeStr = self.good.bar_code else {
+            return nil
+        }
+        
+        guard let barcode = BarcodeFactory.barcode(from: barcodeStr) else {
+            return nil
+        }
+        
+        return BarcodeView(barcode)
     }
 }
 

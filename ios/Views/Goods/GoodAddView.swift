@@ -42,7 +42,7 @@ struct GoodAddView: View {
                     ZStack(alignment: .trailing) {
                         TextField("", text: $barCode)
                             .keyboardType(.numberPad)
-                        Image(systemName: "camera")
+                        Image(systemName: "barcode.viewfinder")
                             .foregroundColor(.accentColor)
                             .font(.title)
                             .padding(.trailing, 16)
@@ -63,7 +63,6 @@ struct GoodAddView: View {
                 }) {
                     Text("Cancel")
                         .font(.headline)
-                        .foregroundColor(.red)
                         
                 },
                 trailing: Button(action: {
@@ -72,7 +71,7 @@ struct GoodAddView: View {
                     Text("Done")
                         .font(.headline)
                         
-                }.disabled(pendingRequest || name.isEmpty || price.isEmpty)
+                }.disabled(pendingRequest || name.isEmpty || price.isEmpty || Int(price) ?? 0 <= 0)
             )
         }
         .sheet(isPresented: $showBarCodeCameraModal) {

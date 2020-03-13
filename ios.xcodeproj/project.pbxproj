@@ -14,6 +14,7 @@
 		321D3060237EBBC8003780D6 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 321D305F237EBBC8003780D6 /* SwURL */; };
 		321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321D3061237ED6D9003780D6 /* AuthenticationServices.framework */; };
 		321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3081237F2E66003780D6 /* UserDetailView.swift */; };
+		321F994C241AE2EA00E0E864 /* BarcodeView in Frameworks */ = {isa = PBXBuildFile; productRef = 321F994B241AE2EA00E0E864 /* BarcodeView */; };
 		3223079723A6AFD5008CDE0B /* ContinueWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223079623A6AFD5008CDE0B /* ContinueWithAppleButton.swift */; };
 		325622682382A39E006FEABF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		3269E85523A4060C002E4724 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */; };
@@ -227,6 +228,7 @@
 			files = (
 				32EA7ED123A27CEA00C7625D /* JWT in Frameworks */,
 				32F0941E23F6C95000D334A1 /* CarBode in Frameworks */,
+				321F994C241AE2EA00E0E864 /* BarcodeView in Frameworks */,
 				32935E3923A27A1C00817678 /* Alamofire in Frameworks */,
 				321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */,
 				321D3060237EBBC8003780D6 /* SwURL in Frameworks */,
@@ -488,6 +490,7 @@
 				32935E3823A27A1C00817678 /* Alamofire */,
 				32EA7ED023A27CEA00C7625D /* JWT */,
 				32F0941D23F6C95000D334A1 /* CarBode */,
+				321F994B241AE2EA00E0E864 /* BarcodeView */,
 			);
 			productName = ios;
 			productReference = 329D26DE237DDD2700751025 /* Mirrors Photo.app */;
@@ -573,6 +576,7 @@
 				32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				32EA7ECF23A27CEA00C7625D /* XCRemoteSwiftPackageReference "JSONWebToken.swift" */,
 				32F0941C23F6C95000D334A1 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
+				321F994A241AE2EA00E0E864 /* XCRemoteSwiftPackageReference "BarcodeView" */,
 			);
 			productRefGroup = 329D26DF237DDD2700751025 /* Products */;
 			projectDirPath = "";
@@ -1198,6 +1202,14 @@
 				minimumVersion = 0.2.2;
 			};
 		};
+		321F994A241AE2EA00E0E864 /* XCRemoteSwiftPackageReference "BarcodeView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nrivard/BarcodeView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1229,6 +1241,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 321D305E237EBBC8003780D6 /* XCRemoteSwiftPackageReference "SwURL" */;
 			productName = SwURL;
+		};
+		321F994B241AE2EA00E0E864 /* BarcodeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 321F994A241AE2EA00E0E864 /* XCRemoteSwiftPackageReference "BarcodeView" */;
+			productName = BarcodeView;
 		};
 		32935E3823A27A1C00817678 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -28,9 +28,11 @@ struct GoodsView: View {
                 ForEach(self.items) { item in
                     NavigationLink(destination: GoodView(good: item)) {
                         VStack(alignment: .leading) {
-                            Text(item.name)
+                            Text(verbatim: item.name)
                                 .font(.headline)
-                            Text(item.description)
+                            if item.description != nil {
+                                Text(verbatim: item.description!)
+                            }
                         }
                     }
                 }

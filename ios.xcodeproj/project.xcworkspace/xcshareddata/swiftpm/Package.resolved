@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "BarcodeView",
+        "repositoryURL": "https://github.com/nrivard/BarcodeView.git",
+        "state": {
+          "branch": null,
+          "revision": "1a3bbb99afc832ae4267e4067191d5510c438f6c",
+          "version": "0.1.1"
+        }
+      },
+      {
         "package": "CarBode",
         "repositoryURL": "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI",
         "state": {
@@ -35,6 +44,15 @@
           "branch": null,
           "revision": "967e7e7c441374c76d5559e27db2a74a26160fe5",
           "version": "0.2.2"
+        }
+      },
+      {
+        "package": "ViewInspector",
+        "repositoryURL": "https://github.com/nalexn/ViewInspector",
+        "state": {
+          "branch": null,
+          "revision": "ec943ed718cd293b95f17a2b81e8917d6ed70752",
+          "version": "0.3.8"
         }
       }
     ]
