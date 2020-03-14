@@ -20,7 +20,8 @@ struct GoodsView: View {
     @State private var showingAlert = false
     @State private var alertText = ""
     
-    @State private var showModal = false
+    @State private var isShowModal = false
+    @State private var showModal: Sheet = .none
     
     var body: some View {
         NavigationView {
@@ -41,7 +42,8 @@ struct GoodsView: View {
             .navigationBarTitle(Text("Goods"))
             .navigationBarItems(
                 trailing: Button(action: {
-                    self.showModal.toggle()
+                    self.isShowModal.toggle()
+                    self.showModal = .add
                 }) {
                     Image(systemName: "plus")
                     .font(.title)
@@ -52,8 +54,10 @@ struct GoodsView: View {
         .onAppear(perform: loadData)
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))
-        }.sheet(isPresented: $showModal) {
-            GoodAddView(items: self.$items, show: self.$showModal)
+        }.sheet(isPresented: $isShowModal) {
+            if self.showModal == .add {
+                GoodAddView(items: self.$items, show: self.$isShowModal)
+            }
         }
     }
     
@@ -93,6 +97,12 @@ struct GoodsView: View {
 
             self.items.remove(atOffsets: offsets)
         }
+    }
+    
+    enum Sheet {
+        case none
+        case add
+        case detail
     }
 }
 
