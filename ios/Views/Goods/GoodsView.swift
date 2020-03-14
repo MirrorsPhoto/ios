@@ -22,12 +22,17 @@ struct GoodsView: View {
     
     @State private var isShowModal = false
     @State private var showModal: Sheet = .none
+    @State private var currentItem: Good = .default
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(self.items) { item in
-                    NavigationLink(destination: GoodView(good: item)) {
+                    Button(action: {
+                        self.currentItem = item
+                        self.isShowModal.toggle()
+                        self.showModal = .detail
+                    }) {
                         VStack(alignment: .leading) {
                             Text(verbatim: item.name)
                                 .font(.headline)
@@ -57,6 +62,9 @@ struct GoodsView: View {
         }.sheet(isPresented: $isShowModal) {
             if self.showModal == .add {
                 GoodAddView(items: self.$items, show: self.$isShowModal)
+            }
+            if self.showModal == .detail {
+                GoodView(good: self.$currentItem)
             }
         }
     }

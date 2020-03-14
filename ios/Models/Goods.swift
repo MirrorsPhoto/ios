@@ -24,4 +24,15 @@ struct Good: Codable, Identifiable {
     let bar_code: String?
     let price: Int
     let available: Int
+    
+    static let `default` = Self(id: 0, name: "", description: nil, bar_code: nil, price: 0, available: 0)
+    
+    init(id: Int, name: String, description: String?, bar_code: String?, price: Int, available: Int) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.bar_code = bar_code
+        self.price = price
+        self.available = available
+    }
 }

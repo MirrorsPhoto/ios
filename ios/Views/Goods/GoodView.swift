@@ -11,7 +11,7 @@ import BarcodeView
 
 struct GoodView: View {
     
-    var good: Good
+    @Binding var good: Good
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,11 +37,5 @@ struct GoodView: View {
         }
         
         return BarcodeView(barcode)
-    }
-}
-
-struct GoodView_Previews: PreviewProvider {
-    static var previews: some View {
-        GoodView(good: Good(id: 1, name: "Test", description: "Description", bar_code: "12312312", price: 123, available: 1))
     }
 }
