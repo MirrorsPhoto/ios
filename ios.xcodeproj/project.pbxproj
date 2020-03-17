@@ -270,13 +270,6 @@
 			path = widget;
 			sourceTree = "<group>";
 		};
-		328466C823DDDC2E00030B47 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		328466DC23DF6E1C00030B47 /* notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,7 +337,6 @@
 			children = (
 				3292D25C2417E4FF00BD7AC9 /* Dashboard */,
 				32C026AB23F6D397007E7427 /* Goods */,
-				328466C823DDDC2E00030B47 /* UI */,
 				329D26E5237DDD2700751025 /* RootView.swift */,
 				329D26F7237DDDB200751025 /* AuthView.swift */,
 				329D26F9237DDDC600751025 /* MainView.swift */,

@@ -64,7 +64,7 @@ struct GoodsView: View {
                 GoodAddView(items: self.$items, show: self.$isShowModal)
             }
             if self.showModal == .detail {
-                GoodView(good: self.$currentItem)
+                GoodView(items: self.$items, good: self.$currentItem, show: self.$isShowModal)
             }
         }
     }

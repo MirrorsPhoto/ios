@@ -109,7 +109,7 @@ struct GoodAddView: View {
             "Authorization": "Bearer \(token!)"
         ]
         
-        Alamofire.request("http://api.mirrors-photo.ru/good/add", method: .post, parameters: parameters, headers: headers).responseJSON { (response) in
+        Alamofire.request("http://api.mirrors-photo.ru/good", method: .post, parameters: parameters, headers: headers).responseJSON { (response) in
             switch response.result {
             case .failure(_):
                 self.pendingRequest = false
