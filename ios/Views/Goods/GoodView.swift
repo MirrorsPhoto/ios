@@ -21,7 +21,9 @@ struct GoodView: View {
     
     @Binding var show: Bool
     
-    @State private var showBarCodeCameraModal = false
+    @State private var isShowModal = false
+    @State private var showModal: Sheet = .none
+    
     @State private var pendingRequest = false
     
     @State private var showingAlert = false
@@ -39,63 +41,133 @@ struct GoodView: View {
             set: { self.good.bar_code = $0 })
     }
     
+    @State private var isEditMode = false
+    
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Name")) {
-                    TextField("", text: $good.name)
+                    if (isEditMode) {
+                        TextField("", text: $good.name)
+                    } else {
+                        Text(verbatim: good.name)
+                    }
                 }
                 Section(header: Text("Description")) {
-                    TextField("", text: description)
+                    if (isEditMode) {
+                        TextField("", text: description)
+                    } else {
+                        Text(verbatim: good.description ?? "")
+                    }
                 }
                 Section(header: Text("Barcode")) {
-                    ZStack(alignment: .trailing) {
-                        TextField("", text: barCode)
-                            .keyboardType(.numberPad)
-                        Image(systemName: "barcode.viewfinder")
-                            .foregroundColor(.accentColor)
-                            .font(.title)
-                            .padding(.trailing, 16)
-                            .onTapGesture {
-                                self.showBarCodeCameraModal = true
+                    if (isEditMode) {
+                        ZStack(alignment: .trailing) {
+                            TextField("", text: barCode)
+                                .keyboardType(.numberPad)
+                            Image(systemName: "barcode.viewfinder")
+                                .foregroundColor(.accentColor)
+                                .font(.title)
+                                .padding(.trailing, 16)
+                                .onTapGesture {
+                                    self.isShowModal = true
+                                    self.showModal = .cameraCode
+                                }
+                        }
+                    } else {
+                        HStack(alignment: .center) {
+                            Text(verbatim: good.bar_code ?? "")
+                            Spacer()
+                            if self.generateBarCode() != nil {
+                                Image(systemName: "eye")
+                                    .foregroundColor(.accentColor)
+                                    .font(.title)
+                                    .padding(.trailing, 16)
+                                    .onTapGesture {
+                                        self.isShowModal = true
+                                        self.showModal = .showCode
+                                    }
                             }
+                        }
                     }
                 }
                 Section(header: Text("Price")) {
-                    TextField("", value: $good.price, formatter: NumberFormatter())
+                    if (isEditMode) {
+                        TextField("", value: $good.price, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
+                    } else {
+                        Text(verbatim: Helper.formatCurrency(good.price))
+                    }
                 }
             }
-            .navigationBarTitle(Text("Edit good"))
+            .navigationBarTitle(isEditMode ? Text("Edit good") : Text("Detail good"))
             .navigationBarItems(
-                leading: Button(action: {
-                    self.show.toggle()
-                }) {
-                    Text("Cancel")
-                        .font(.headline)
-                        
-                },
-                trailing: Button(action: {
-                    self.edit()
-                }) {
-                    Text("Done")
-                        .font(.headline)
-                }.disabled(pendingRequest || self.good.name.isEmpty || self.good.price <= 0)
+                leading:
+                    isEditMode ?
+                    AnyView(Button(action: {
+                        self.isEditMode = false
+                    }) {
+                        Text("Cancel")
+                            .font(.headline)
+                            
+                    }) :
+                    AnyView(EmptyView()),
+                trailing:
+                    isEditMode ?
+                    AnyView(Button(action: {
+                        self.edit()
+                    }) {
+                        Text("Done")
+                            .font(.headline)
+                    }.disabled(pendingRequest || self.good.name.isEmpty || self.good.price <= 0)) :
+                    AnyView(Button(action: {
+                        self.isEditMode = true
+                    }) {
+                        Text("Edit")
+                            .font(.headline)
+                    })
+                
             )
         }
-        .sheet(isPresented: $showBarCodeCameraModal) {
-            CarBode(supportBarcode: [.ean13])
+        .sheet(isPresented: $isShowModal) {
+            if self.showModal == .cameraCode {
+                CarBode(supportBarcode: [.ean13])
                 .interval(delay: 0.5)
                 .found {
                     UINotificationFeedbackGenerator().notificationOccurred(.success)
                     self.good.bar_code = $0
-                    self.showBarCodeCameraModal = false
+                    self.isShowModal = false
                 }
+            }
+            if self.showModal == .showCode {
+                if self.generateBarCode() != nil {
+                    ZStack {
+                        Color.white.edgesIgnoringSafeArea(.all)
+                        self.generateBarCode()
+                            .frame(height: 120)
+                            .foregroundColor(.black)
+                    }
+                } else {
+                    Text("Barcode: \(self.good.bar_code ?? "")")
+                }
+            }
         }
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    func generateBarCode() -> BarcodeView? {
+        guard let barcodeStr = self.good.bar_code else {
+            return nil
+        }
+        
+        guard let barcode = BarcodeFactory.barcode(from: barcodeStr) else {
+            return nil
+        }
+        
+        return BarcodeView(barcode)
     }
     
     func edit() {
@@ -142,15 +214,9 @@ struct GoodView: View {
         }
     }
     
-    func generateBarCode() -> BarcodeView? {
-        guard let barcodeStr = self.good.bar_code else {
-            return nil
-        }
-        
-        guard let barcode = BarcodeFactory.barcode(from: barcodeStr) else {
-            return nil
-        }
-        
-        return BarcodeView(barcode)
+    enum Sheet {
+        case none
+        case cameraCode
+        case showCode
     }
 }
