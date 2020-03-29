@@ -5,6 +5,17 @@
 
 import Foundation
 
+// MARK: - TodayResponse
+class TodayResponse: Codable {
+    let status: String
+    let response: TodaySummary
+
+    init(status: String, response: TodaySummary) {
+        self.status = status
+        self.response = response
+    }
+}
+
 // MARK: - TodaySummary
 class TodaySummary: Codable {
     var cash: Cash

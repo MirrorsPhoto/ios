@@ -16,6 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     private var token: String? = nil
     private var isAuth: Bool = false
+    private var todaySummary = TodaySummary()
     
     @IBOutlet weak var signIn: UIButton!
     
@@ -38,6 +39,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var laminationIcon: UIImageView!
     @IBOutlet weak var serviceIcon: UIImageView!
     
+    var myConstrains = [NSLayoutConstraint]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,30 +56,28 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             return
         }
         
-        let cashFromStorage = sharedDefaults?.integer(forKey: "cashTotal") ?? 0
-        let clientFromStorage = sharedDefaults?.integer(forKey: "clientTotal") ?? 0
+        if let savedTodaySummary = self.sharedDefaults!.object(forKey: "todaySummary") as? Data {
+            if let loadedTodaySummary = try? JSONDecoder().decode(TodaySummary.self, from: savedTodaySummary) {
+                self.todaySummary = loadedTodaySummary
+            }
+        }
         
-        self.setCash(cashFromStorage)
-        self.setClient(clientFromStorage)
+        updateWidget()
 
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(self.token!)"
         ]
         
         Alamofire.request("http://api.mirrors-photo.ru/sale/today", headers: headers).responseJSON { (response) in
-            guard let responseJSON = response.result.value as? [String: Any] else {
-                return
+            let todayResponse = try! JSONDecoder().decode(TodayResponse.self, from: response.data!)
+            
+            self.todaySummary = todayResponse.response
+            
+            if let encoded = try? JSONEncoder().encode(self.todaySummary) {
+                self.sharedDefaults!.set(encoded, forKey: "todaySummary")
             }
             
-            guard responseJSON["status"] as! String == "OK" else {
-                return
-            }
-            
-            guard let result = responseJSON["response"] as? [String: Any] else {
-                return
-            }
-            
-            self.updateWidget(result)
+            self.updateWidget()
         }
     }
         
@@ -102,23 +103,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         })
     }
     
-    private func updateWidget(_ data: [String: Any]) {
-        guard let client = data["client"] as? [String: Int] else {
-            return
-        }
-        guard let cash = data["cash"] as? [String: Any] else {
-            return
-        }
-        guard let cashToday = cash["today"] as? [String: Int] else {
-            return
-        }
-        
-        let today = Today(photo: cashToday["photo"] ?? 0, good: cashToday["good"] ?? 0, copy: cashToday["copy"] ?? 0, lamination: cashToday["lamination"] ?? 0, printing: cashToday["printing"] ?? 0, service: cashToday["service"] ?? 0, total: cashToday["total"] ?? 0)
-        
-        
-        setCash(today.total)
-        setClient(client["today"]!)
-        setBarWidth(today)
+    private func updateWidget() {
+        setCash(self.todaySummary.cash.today.total)
+        setClient(self.todaySummary.client.today)
+        setBarWidth(self.todaySummary.cash.today)
     }
     
     func setBarWidth(_ today: Today) {
@@ -143,7 +131,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             data.updateValue(name, forKey: value!)
         }
         
-        for (value, name) in data.sorted(by: >) {
+        let sortedData = data.sorted(by: >)
+        
+        self.view.removeConstraints(self.myConstrains)
+        
+        for (value, name) in sortedData {
             var bar: RoundedCornerView?
             var icon: UIImageView?
             
@@ -168,14 +160,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
             
             let percent: Double = sum != 0 ? viewMultiplier * Double(value) / sum : 0.0
+            let widthConstraint = NSLayoutConstraint(item: bar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(percent), constant: 0)
             
-            self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: CGFloat(percent), constant: 0))
+            self.view.addConstraint(widthConstraint)
+            self.myConstrains.append(widthConstraint)
             
-            if prevBar == nil {
-                self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: self.cashIcon, attribute: .bottom, multiplier: 1, constant: 48))
-            } else {
-                self.view.addConstraint(NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: prevBar, attribute: .bottom, multiplier: 1, constant: 16))
+            var topConstraint = NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: self.cashIcon, attribute: .bottom, multiplier: 1, constant: 48)
+
+            if prevBar != nil {
+                topConstraint = NSLayoutConstraint(item: bar!, attribute: .top, relatedBy: .equal, toItem: prevBar, attribute: .bottom, multiplier: 1, constant: 16)
             }
+            self.view.addConstraint(topConstraint)
+            self.myConstrains.append(topConstraint)
             
             prevBar = bar!
             
@@ -190,8 +186,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.cashLabel.isHidden = false
         self.cashLabel.text = NSLocalizedString("Cash", comment: "")
         self.cashValue.text = Helper.formatCurrency(value)
-        
-        self.sharedDefaults!.set(value, forKey: "cashTotal")
     }
     
     func setClient(_ value: Int) {
@@ -200,8 +194,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.clientLabel.isHidden = false
         self.clientLabel.text = NSLocalizedString("Client", comment: "")
         self.clientValue.text = String.localizedStringWithFormat(NSLocalizedString("Client value", comment: ""), String(value))
-        
-        self.sharedDefaults!.set(value, forKey: "clientTotal")
     }
     
 }

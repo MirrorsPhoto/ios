@@ -21,8 +21,7 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
     
     init(token: String? = nil) {
-        self.todaySummary.cash.today.total = sharedDefaults?.integer(forKey: "cashTotal") ?? 0
-        self.todaySummary.client.today = sharedDefaults?.integer(forKey: "clientTotal") ?? 0
+        updateTodayFromStorage()
         
         if token == nil {
             return
@@ -87,14 +86,26 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     }
     
     func onMessage(connection: WebSocketConnection, text: String) {
+        let today = try! JSONDecoder().decode(TodaySummary.self, from: text.data(using: .utf8)!)
+        
         DispatchQueue.main.async {
-            self.todaySummary = try! JSONDecoder().decode(TodaySummary.self, from: text.data(using: .utf8)!)
-            self.sharedDefaults!.set(self.todaySummary.cash.today.total, forKey: "cashTotal")
-            self.sharedDefaults!.set(self.todaySummary.client.today, forKey: "clientTotal")
+            self.todaySummary = today
+        }
+        
+        if let encoded = try? JSONEncoder().encode(today) {
+            self.sharedDefaults!.set(encoded, forKey: "todaySummary")
         }
     }
     
     func onMessage(connection: WebSocketConnection, data: Data) {
         print("new websocket data")
+    }
+    
+    func updateTodayFromStorage() {
+        if let savedTodaySummary = self.sharedDefaults!.object(forKey: "todaySummary") as? Data {
+            if let loadedTodaySummary = try? JSONDecoder().decode(TodaySummary.self, from: savedTodaySummary) {
+                self.todaySummary = loadedTodaySummary
+            }
+        }
     }
 }
