@@ -14,8 +14,8 @@ struct MainView: View {
     
     var body: some View {
         List {
-            Row(text: "🧟‍♀️",  number: self.sessionManager.todaySummary.client.today, formatter: Helper.formatNumber)
-            Row(text: "🥬", number: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
+            DashboardItemView(iconName: "rublesign.square", label: "Cash", value: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
+            DashboardItemView(iconName: "person.crop.square", label: "Client", value: self.sessionManager.todaySummary.client.today, formatter: Helper.localizedClientCount)
         }
         .contextMenu(menuItems: {
             Button(action: {
@@ -30,27 +30,6 @@ struct MainView: View {
         })
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Dashboard"))
-    }
-}
-
-struct Row: View {
-    
-    var text: String
-    var number: Int
-    var formatter = { (_ value: Int) -> String in
-        return String(value)
-    }
-    
-    var body: some View {
-        HStack {
-            Text(verbatim: self.text)
-                .font(.largeTitle)
-            Spacer()
-            Text(verbatim: formatter(self.number))
-                .font(.largeTitle)
-        }
-            .listRowPlatterColor(Color.blue)
-            .frame(height: 60)
     }
 }
 

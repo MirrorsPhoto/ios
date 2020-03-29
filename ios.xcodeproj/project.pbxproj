@@ -45,6 +45,7 @@
 		32ABB62823E1F5ED00714CA5 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278912B238447EC00D21A3D /* RoundedCornerView.swift */; };
 		32C026AD23F6D3C2007E7427 /* GoodAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C026AC23F6D3C2007E7427 /* GoodAddView.swift */; };
 		32C8CACD23F17701000DCB48 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C8CACC23F17701000DCB48 /* DashboardView.swift */; };
+		32E07858243124DC004C7455 /* DashboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292D25D2417E57400BD7AC9 /* DashboardItemView.swift */; };
 		32E5B64023A53CCF0055719B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D2704237E92DE00751025 /* User.swift */; };
 		32EA7ED123A27CEA00C7625D /* JWT in Frameworks */ = {isa = PBXBuildFile; productRef = 32EA7ED023A27CEA00C7625D /* JWT */; };
 		32EA7ED323A27D1D00C7625D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32EA7ED223A27D1D00C7625D /* Alamofire */; };
@@ -692,6 +693,7 @@
 				32EA7EEA23A2847900C7625D /* HostingController.swift in Sources */,
 				32EA7F1123A2951900C7625D /* MainView.swift in Sources */,
 				32EA7F1E23A2BF9C00C7625D /* WebSocketConnection.swift in Sources */,
+				32E07858243124DC004C7455 /* DashboardItemView.swift in Sources */,
 				32EA7F1723A29B7900C7625D /* AuthView.swift in Sources */,
 				32F102FD23F1AAD000AD2FDA /* RootView.swift in Sources */,
 				32E5B64023A53CCF0055719B /* User.swift in Sources */,
@@ -896,7 +898,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -915,7 +917,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.9.0;
+				MARKETING_VERSION = 0.9.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -961,7 +963,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -974,7 +976,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.9.0;
+				MARKETING_VERSION = 0.9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER_IOS = com.mirrors.ios;
