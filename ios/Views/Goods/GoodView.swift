@@ -99,6 +99,9 @@ struct GoodView: View {
                         Text(verbatim: Helper.formatCurrency(good.price))
                     }
                 }
+                Section(header: Text("Available")) {
+                    Text(verbatim: String(good.available))
+                }
             }
             .navigationBarTitle(isEditMode ? Text("Edit good") : Text("Detail good"))
             .navigationBarItems(
