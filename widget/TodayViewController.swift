@@ -134,6 +134,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let sortedData = data.sorted(by: >)
         
         self.view.removeConstraints(self.myConstrains)
+        self.photoBar.isHidden = true
+        self.photoIcon.isHidden = true
+        self.goodBar.isHidden = true
+        self.goodIcon.isHidden = true
+        self.copyBar.isHidden = true
+        self.copyIcon.isHidden = true
+        self.laminationBar.isHidden = true
+        self.laminationIcon.isHidden = true
         
         for (value, name) in sortedData {
             var bar: RoundedCornerView?
