@@ -34,7 +34,6 @@ struct MainView: View {
                     Text(verbatim: sessionManager.user!.username)
                 }
         }
-        .edgesIgnoringSafeArea(.top)
     }
 }
 

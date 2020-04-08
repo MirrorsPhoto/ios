@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		321BE6712381D0B6008750A9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321BE6702381D0B6008750A9 /* NotificationCenter.framework */; };
+		321BE6712381D0B6008750A9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321BE6702381D0B6008750A9 /* NotificationCenter.framework */; platformFilter = ios; };
 		321BE6742381D0B6008750A9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321BE6732381D0B6008750A9 /* TodayViewController.swift */; };
 		321BE6772381D0B6008750A9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321BE6752381D0B6008750A9 /* MainInterface.storyboard */; };
-		321BE67B2381D0B6008750A9 /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 321BE66F2381D0B6008750A9 /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		321BE67B2381D0B6008750A9 /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 321BE66F2381D0B6008750A9 /* widget.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		321D3060237EBBC8003780D6 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 321D305F237EBBC8003780D6 /* SwURL */; };
 		321D3062237ED6D9003780D6 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321D3061237ED6D9003780D6 /* AuthenticationServices.framework */; };
 		321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3081237F2E66003780D6 /* UserDetailView.swift */; };
@@ -25,7 +25,7 @@
 		328466DB23DF6E1C00030B47 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328466DA23DF6E1C00030B47 /* UserNotificationsUI.framework */; };
 		328466DE23DF6E1C00030B47 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466DD23DF6E1C00030B47 /* NotificationViewController.swift */; };
 		328466E123DF6E1C00030B47 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328466DF23DF6E1C00030B47 /* MainInterface.storyboard */; };
-		328466E523DF6E1C00030B47 /* notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 328466D723DF6E1B00030B47 /* notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		328466E523DF6E1C00030B47 /* notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 328466D723DF6E1B00030B47 /* notification.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		328466EA23DF851A00030B47 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F70EF1238734A3009ED468 /* Helper.swift */; };
 		3292D25E2417E57400BD7AC9 /* DashboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292D25D2417E57400BD7AC9 /* DashboardItemView.swift */; };
 		3292D2602417F7A100BD7AC9 /* DashboardBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292D25F2417F7A100BD7AC9 /* DashboardBarItemView.swift */; };
@@ -54,7 +54,7 @@
 		32EA7EEA23A2847900C7625D /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7EE923A2847900C7625D /* HostingController.swift */; };
 		32EA7EEC23A2847900C7625D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA7EEB23A2847900C7625D /* ExtensionDelegate.swift */; };
 		32EA7EEE23A2847C00C7625D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EA7EED23A2847C00C7625D /* Assets.xcassets */; };
-		32EA7EF523A2847C00C7625D /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 32EA7ED623A2847200C7625D /* watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		32EA7EF523A2847C00C7625D /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 32EA7ED623A2847200C7625D /* watch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		32EA7EFF23A284C700C7625D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D26FC237DDDF900751025 /* SessionManager.swift */; };
 		32EA7F0023A284D200C7625D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329D26E7237DDD2A00751025 /* Assets.xcassets */; };
 		32EA7F0123A284D300C7625D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329D26E7237DDD2A00751025 /* Assets.xcassets */; };
@@ -709,11 +709,13 @@
 /* Begin PBXTargetDependency section */
 		321BE67A2381D0B6008750A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 321BE66E2381D0B6008750A9 /* widget */;
 			targetProxy = 321BE6792381D0B6008750A9 /* PBXContainerItemProxy */;
 		};
 		328466E423DF6E1C00030B47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 328466D623DF6E1B00030B47 /* notification */;
 			targetProxy = 328466E323DF6E1C00030B47 /* PBXContainerItemProxy */;
 		};
@@ -724,6 +726,7 @@
 		};
 		32EA7EF423A2847C00C7625D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 32EA7ED523A2847200C7625D /* watch */;
 			targetProxy = 32EA7EF323A2847C00C7625D /* PBXContainerItemProxy */;
 		};
@@ -792,6 +795,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER_IOS).widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -815,6 +819,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER_IOS).widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -837,6 +842,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER_IOS).notification";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -859,6 +865,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER_IOS).notification";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -898,8 +905,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -917,7 +925,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.9.1;
+				MARKETING_VERSION = 1.0.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -963,8 +971,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -976,7 +985,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.9.1;
+				MARKETING_VERSION = 1.0.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER_IOS = com.mirrors.ios;
@@ -1008,6 +1017,7 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER_IOS)";
 				PRODUCT_NAME = "Mirrors Photo";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1033,6 +1043,7 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER_IOS)";
 				PRODUCT_NAME = "Mirrors Photo";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1208,8 +1219,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nrivard/BarcodeView.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.1;
+				kind = exactVersion;
+				version = 0.1.1;
 			};
 		};
 		32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
