@@ -19,6 +19,7 @@ struct MainView: View {
         }
         .contextMenu(menuItems: {
             Button(action: {
+                PushNotification.unregisterDeviceToken()
                 self.sessionManager.logOut()
             }, label: {
                 VStack{
