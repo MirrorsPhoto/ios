@@ -11,7 +11,11 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        PushNotification.register()
+    }
+    
+    func didRegisterForRemoteNotifications(withDeviceToken deviceToken: Data) {
+        PushNotification.registerDeviceToken(deviceToken)
     }
 
     func applicationDidBecomeActive() {

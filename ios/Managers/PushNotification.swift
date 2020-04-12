@@ -6,7 +6,14 @@
 //  Copyright © 2020 Mirror's Photo. All rights reserved.
 //
 
-import UIKit
+#if canImport(UIKit)
+  import UIKit
+#endif
+
+#if canImport(WatchKit)
+  import WatchKit
+#endif
+
 import UserNotifications
 import Alamofire
 
@@ -20,7 +27,13 @@ class PushNotification {
             guard granted else { return }
         
             DispatchQueue.main.async(execute: {
-                UIApplication.shared.registerForRemoteNotifications()
+                #if os(watchOS)
+                    WKExtension.shared().registerForRemoteNotifications()
+                #endif
+                
+                #if os(iOS)
+                    UIApplication.shared.registerForRemoteNotifications()
+                #endif
             })
         }
     }

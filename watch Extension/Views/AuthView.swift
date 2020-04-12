@@ -77,6 +77,7 @@ struct AuthView: View {
             
             sharedDefaults!.set(token, forKey: "token")
             self.sessionManager.signIn(token: token)
+            PushNotification.register()
         }
     }
 }
