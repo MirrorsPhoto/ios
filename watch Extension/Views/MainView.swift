@@ -12,25 +12,57 @@ struct MainView: View {
     
     @ObservedObject var sessionManager: SessionManager
     
-    var body: some View {
-        List {
-            DashboardItemView(iconName: "rublesign.square", label: "Cash", value: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
-            DashboardItemView(iconName: "person.crop.square", label: "Client", value: self.sessionManager.todaySummary.client.today, formatter: Helper.localizedClientCount)
+    @State private var currentTab: Tab = .dashboard
+    
+    enum Tab: CaseIterable, Identifiable {
+        case dashboard
+        case userDetail
+        
+        var id: Tab { self }
+        func name(_ sessionManager: SessionManager) -> String {
+            switch self {
+            case .dashboard:
+                return String(NSLocalizedString("Dashboard", comment: ""))
+            case .userDetail:
+                return sessionManager.user!.username
+            }
         }
-        .contextMenu(menuItems: {
-            Button(action: {
-                PushNotification.unregisterDeviceToken()
-                self.sessionManager.logOut()
-            }, label: {
-                VStack{
-                    Image(systemName: "clear")
-                        .font(.title)
-                    Text("Logout")
+        var icon: String {
+            switch self {
+            case .dashboard:
+                return "house"
+            case .userDetail:
+                return "person"
+            }
+        }
+    }
+    
+    var body: some View {
+        tabView()
+        .contextMenu {
+            ForEach(Tab.allCases) { tab in
+                if self.currentTab != tab {
+                    Button(action: {
+                        self.currentTab = tab
+                    }, label: {
+                        VStack{
+                            Image(systemName: tab.icon)
+                                .font(.title)
+                            Text(verbatim: tab.name(self.sessionManager))
+                        }
+                    })
                 }
-            })
-        })
-        .listStyle(CarouselListStyle())
-        .navigationBarTitle(Text("Dashboard"))
+            }
+        }
+    }
+    
+    func tabView() -> AnyView {
+        switch currentTab {
+        case .dashboard:
+            return AnyView(DashboardView(sessionManager: self.sessionManager))
+        case .userDetail:
+            return AnyView(UserDetailView(sessionManager: self.sessionManager))
+        }
     }
 }
 

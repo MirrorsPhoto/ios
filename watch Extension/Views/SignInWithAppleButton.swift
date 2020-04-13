@@ -8,7 +8,6 @@
 
 import SwiftUI
 import AuthenticationServices
-import Alamofire
 
 struct SignInWithAppleButton: WKInterfaceObjectRepresentable {
     
