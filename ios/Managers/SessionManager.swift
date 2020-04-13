@@ -8,6 +8,7 @@
 import JWT
 import Alamofire
 import Foundation
+import AuthenticationServices
 
 class SessionManager : ObservableObject, WebSocketConnectionDelegate {
     
@@ -108,4 +109,24 @@ class SessionManager : ObservableObject, WebSocketConnectionDelegate {
             }
         }
     }
+    
+    func signInWithApple(_ authorization: ASAuthorization) {
+        guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
+            let identifyToken = credentials.identityToken!
+        
+            let parameters: Parameters = [
+                "token": String(decoding: identifyToken, as: UTF8.self),
+            ]
+            
+            Alamofire.request("http://api.mirrors-photo.ru/apple/login", method: .post, parameters: parameters).responseJSON { (response) in
+                guard let responseJSON = response.result.value as? [String: Any] else { return }
+                guard responseJSON["status"] as! String == "OK" else { return }
+                guard let result = responseJSON["response"] as? [String: String] else { return }
+                guard let token = result["token"] else { return }
+                
+                self.sharedDefaults!.set(token, forKey: "token")
+                self.signIn(token: token)
+                PushNotification.register()
+            }
+        }
 }

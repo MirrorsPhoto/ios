@@ -27,6 +27,7 @@
 		328466E123DF6E1C00030B47 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328466DF23DF6E1C00030B47 /* MainInterface.storyboard */; };
 		328466E523DF6E1C00030B47 /* notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 328466D723DF6E1B00030B47 /* notification.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		328466EA23DF851A00030B47 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F70EF1238734A3009ED468 /* Helper.swift */; };
+		32856F6B2443A40800DE2EDE /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32856F6A2443A40800DE2EDE /* SignInWithAppleButton.swift */; };
 		3292D25E2417E57400BD7AC9 /* DashboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292D25D2417E57400BD7AC9 /* DashboardItemView.swift */; };
 		3292D2602417F7A100BD7AC9 /* DashboardBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292D25F2417F7A100BD7AC9 /* DashboardBarItemView.swift */; };
 		3292D2622417FA9400BD7AC9 /* DashboardBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292D2612417FA9400BD7AC9 /* DashboardBarItem.swift */; };
@@ -168,6 +169,7 @@
 		328466DD23DF6E1C00030B47 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		328466E023DF6E1C00030B47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		328466E223DF6E1C00030B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32856F6A2443A40800DE2EDE /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
 		3292D25D2417E57400BD7AC9 /* DashboardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemView.swift; sourceTree = "<group>"; };
 		3292D25F2417F7A100BD7AC9 /* DashboardBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBarItemView.swift; sourceTree = "<group>"; };
 		3292D2612417FA9400BD7AC9 /* DashboardBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBarItem.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			children = (
 				32EA7F1023A2951900C7625D /* MainView.swift */,
 				32EA7F1623A29B7900C7625D /* AuthView.swift */,
+				32856F6A2443A40800DE2EDE /* SignInWithAppleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				32EA7F1723A29B7900C7625D /* AuthView.swift in Sources */,
 				32F102FD23F1AAD000AD2FDA /* RootView.swift in Sources */,
 				32E5B64023A53CCF0055719B /* User.swift in Sources */,
+				32856F6B2443A40800DE2EDE /* SignInWithAppleButton.swift in Sources */,
 				32EA7EFF23A284C700C7625D /* SessionManager.swift in Sources */,
 				32EA7EEC23A2847900C7625D /* ExtensionDelegate.swift in Sources */,
 				328466D123DE3E5700030B47 /* TodaySummary.swift in Sources */,

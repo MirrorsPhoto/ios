@@ -62,44 +62,7 @@ class Coordinator: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationC
     }
   
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
-            let identifyToken = credentials.identityToken!
-        
-            let parameters: Parameters = [
-                "token": String(decoding: identifyToken, as: UTF8.self),
-            ]
-            
-            Alamofire.request("http://api.mirrors-photo.ru/apple/login", method: .post, parameters: parameters).responseJSON { (response) in
-                guard let responseJSON = response.result.value as? [String: Any] else {
-                    self.parent.showingAlert = true
-                    self.parent.alertText = "Invalid information received from service"
-                    return
-                }
-                
-                guard responseJSON["status"] as! String == "OK" else {
-                    let messages = responseJSON["message"] as! [String]
-                    self.parent.showingAlert = true
-                    self.parent.alertText = messages[0]
-                    return
-                }
-                
-                guard let result = responseJSON["response"] as? [String: String] else {
-                    self.parent.showingAlert = true
-                    self.parent.alertText = "Invalid response format"
-                    return
-                }
-                
-                guard let token = result["token"] else {
-                    self.parent.alertText = "Invalid token format"
-                    return
-                }
-                
-                let sharedDefaults = UserDefaults(suiteName: "group.com.mirrors.ios.widget.data")
-                
-                sharedDefaults!.set(token, forKey: "token")
-                self.parent.sessionManager.signIn(token: token)
-                PushNotification.register()
-            }
+        self.parent.sessionManager.signInWithApple(authorization)
     }
   
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {}

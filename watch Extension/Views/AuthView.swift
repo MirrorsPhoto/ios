@@ -20,14 +20,11 @@ struct AuthView: View {
     @State var alertText = ""
     
     var body: some View {
-        VStack {
-            Spacer()
+        ScrollView {
             TextField("Login", text: $login)
                 .textContentType(.username)
-                .focusable(true)
             SecureField("Password", text: $password)
                 .textContentType(.password)
-            Spacer()
             Button(action: {
                 self.signIn()
             }) {
@@ -36,10 +33,11 @@ struct AuthView: View {
                     
             }
             .disabled(login.isEmpty || password.isEmpty)
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))
-            }
-            .navigationBarTitle(Text("Authorization"))
+            SignInWithAppleButton(sessionManager: sessionManager, showingAlert: $showingAlert, alertText: $alertText)
+        }
+        .navigationBarTitle(Text("Authorization"))
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))
         }
     }
     
