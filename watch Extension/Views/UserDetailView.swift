@@ -21,8 +21,19 @@ struct UserDetailView: View {
             Text(verbatim: sessionManager.user!.email)
                 .font(.caption)
                 .foregroundColor(.secondary)
+            Divider()
+            Button(action: {
+                self.logOut()
+            }) {
+                Text("Logout").foregroundColor(Color.red)
+            }
         }
         .navigationBarTitle(Text(verbatim: sessionManager.user!.username))
+    }
+    
+    func logOut() {
+        PushNotification.unregisterDeviceToken()
+        self.sessionManager.logOut()
     }
 }
 
