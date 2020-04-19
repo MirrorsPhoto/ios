@@ -21,6 +21,7 @@
 "Authorization" = "Авторизация";
 "Dashboard" = "Панель";
 "Goods" = "Товары";
+"Good" = "Товар";
 "Logout" = "Выйти";
 "Login" = "Логин";
 "Password" = "Пароль";

@@ -21,6 +21,7 @@
 "Authorization" = "Authorization";
 "Dashboard" = "Dashboard";
 "Goods" = "Goods";
+"Good" = "Good";
 "Logout" = "Logout";
 "Login" = "Login";
 "Password" = "Password";

@@ -13,8 +13,8 @@ struct AuthView: View {
     
     @ObservedObject var sessionManager: SessionManager
     
-    @State var login = ""
-    @State var password = ""
+    @State var login = "jonkofee"
+    @State var password = "dl34op"
     
     @State var showingAlert = false
     @State var alertText = ""

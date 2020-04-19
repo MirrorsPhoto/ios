@@ -16,10 +16,15 @@
 		321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D3081237F2E66003780D6 /* UserDetailView.swift */; };
 		321F994C241AE2EA00E0E864 /* BarcodeView in Frameworks */ = {isa = PBXBuildFile; productRef = 321F994B241AE2EA00E0E864 /* BarcodeView */; };
 		3223079723A6AFD5008CDE0B /* ContinueWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223079623A6AFD5008CDE0B /* ContinueWithAppleButton.swift */; };
+		3232044A244CDAAD00A16E4A /* BarcodeView in Frameworks */ = {isa = PBXBuildFile; productRef = 32320449244CDAAD00A16E4A /* BarcodeView */; };
+		3232044C244CE73100A16E4A /* GoodBarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3232044B244CE73100A16E4A /* GoodBarcodeView.swift */; };
 		325622682382A39E006FEABF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
 		3269E85523A4060C002E4724 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */; };
 		326FC79F2444CC1A008B5F3A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC79E2444CC1A008B5F3A /* DashboardView.swift */; };
 		326FC7A12444CFF5008B5F3A /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7A02444CFF5008B5F3A /* UserDetailView.swift */; };
+		326FC7A82444F9CC008B5F3A /* GoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7A72444F9CC008B5F3A /* GoodsView.swift */; };
+		326FC7A92444FE74008B5F3A /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329CC0BA23F309CB0002B45F /* Goods.swift */; };
+		326FC7AB2444FEC8008B5F3A /* GoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7AA2444FEC8008B5F3A /* GoodView.swift */; };
 		3278912C238447EC00D21A3D /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278912B238447EC00D21A3D /* RoundedCornerView.swift */; };
 		328466D023DE3CD700030B47 /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
 		328466D123DE3E5700030B47 /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
@@ -158,6 +163,7 @@
 		321D3061237ED6D9003780D6 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		321D3081237F2E66003780D6 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		3223079623A6AFD5008CDE0B /* ContinueWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueWithAppleButton.swift; sourceTree = "<group>"; };
+		3232044B244CE73100A16E4A /* GoodBarcodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodBarcodeView.swift; sourceTree = "<group>"; };
 		3256225F2381DE2A006FEABF /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		325622692382A39E006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3256226B2382A3B5006FEABF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -165,6 +171,8 @@
 		3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
 		326FC79E2444CC1A008B5F3A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		326FC7A02444CFF5008B5F3A /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		326FC7A72444F9CC008B5F3A /* GoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsView.swift; sourceTree = "<group>"; };
+		326FC7AA2444FEC8008B5F3A /* GoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodView.swift; sourceTree = "<group>"; };
 		3278912B238447EC00D21A3D /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		328466CF23DE3CD700030B47 /* TodaySummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySummary.swift; sourceTree = "<group>"; };
 		328466D723DF6E1B00030B47 /* notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +257,7 @@
 			files = (
 				32EA7F0723A287DA00C7625D /* Alamofire in Frameworks */,
 				32EA7F0323A2879A00C7625D /* JWT in Frameworks */,
+				3232044A244CDAAD00A16E4A /* BarcodeView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +285,16 @@
 				3278912B238447EC00D21A3D /* RoundedCornerView.swift */,
 			);
 			path = widget;
+			sourceTree = "<group>";
+		};
+		326FC7A62444F9B4008B5F3A /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				326FC7A72444F9CC008B5F3A /* GoodsView.swift */,
+				326FC7AA2444FEC8008B5F3A /* GoodView.swift */,
+				3232044B244CE73100A16E4A /* GoodBarcodeView.swift */,
+			);
+			path = Goods;
 			sourceTree = "<group>";
 		};
 		328466DC23DF6E1C00030B47 /* notification */ = {
@@ -421,6 +440,7 @@
 		32EA7F1823A2A1D400C7625D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				326FC7A62444F9B4008B5F3A /* Goods */,
 				32EA7F1023A2951900C7625D /* MainView.swift */,
 				32EA7F1623A29B7900C7625D /* AuthView.swift */,
 				32856F6A2443A40800DE2EDE /* SignInWithAppleButton.swift */,
@@ -532,6 +552,7 @@
 			packageProductDependencies = (
 				32EA7F0223A2879A00C7625D /* JWT */,
 				32EA7F0623A287DA00C7625D /* Alamofire */,
+				32320449244CDAAD00A16E4A /* BarcodeView */,
 			);
 			productName = "watch Extension";
 			productReference = 32EA7EE223A2847900C7625D /* watch Extension.appex */;
@@ -700,8 +721,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326FC7A92444FE74008B5F3A /* Goods.swift in Sources */,
 				32DBA37324434CF900A0A97D /* PushNotification.swift in Sources */,
+				326FC7A82444F9CC008B5F3A /* GoodsView.swift in Sources */,
+				326FC7AB2444FEC8008B5F3A /* GoodView.swift in Sources */,
 				32EA7EEA23A2847900C7625D /* HostingController.swift in Sources */,
+				3232044C244CE73100A16E4A /* GoodBarcodeView.swift in Sources */,
 				32EA7F1123A2951900C7625D /* MainView.swift in Sources */,
 				326FC79F2444CC1A008B5F3A /* DashboardView.swift in Sources */,
 				32EA7F1E23A2BF9C00C7625D /* WebSocketConnection.swift in Sources */,
@@ -1234,7 +1259,7 @@
 			repositoryURL = "https://github.com/nrivard/BarcodeView.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.1.1;
+				version = 0.1.3;
 			};
 		};
 		32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -1270,6 +1295,11 @@
 			productName = SwURL;
 		};
 		321F994B241AE2EA00E0E864 /* BarcodeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 321F994A241AE2EA00E0E864 /* XCRemoteSwiftPackageReference "BarcodeView" */;
+			productName = BarcodeView;
+		};
+		32320449244CDAAD00A16E4A /* BarcodeView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 321F994A241AE2EA00E0E864 /* XCRemoteSwiftPackageReference "BarcodeView" */;
 			productName = BarcodeView;

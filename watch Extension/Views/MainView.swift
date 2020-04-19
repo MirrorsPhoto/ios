@@ -16,6 +16,7 @@ struct MainView: View {
     
     enum Tab: CaseIterable, Identifiable {
         case dashboard
+        case goods
         case userDetail
         
         var id: Tab { self }
@@ -23,6 +24,8 @@ struct MainView: View {
             switch self {
             case .dashboard:
                 return String(NSLocalizedString("Dashboard", comment: ""))
+            case .goods:
+                return String(NSLocalizedString("Goods", comment: ""))
             case .userDetail:
                 return sessionManager.user!.username
             }
@@ -31,6 +34,8 @@ struct MainView: View {
             switch self {
             case .dashboard:
                 return "house"
+            case .goods:
+                return "bag"
             case .userDetail:
                 return "person"
             }
@@ -62,6 +67,8 @@ struct MainView: View {
             return AnyView(DashboardView(sessionManager: self.sessionManager))
         case .userDetail:
             return AnyView(UserDetailView(sessionManager: self.sessionManager))
+        case .goods:
+            return AnyView(GoodsView())
         }
     }
 }
