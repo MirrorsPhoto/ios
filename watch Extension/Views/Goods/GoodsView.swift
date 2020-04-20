@@ -28,6 +28,7 @@ struct GoodsView: View {
                     }
                 }.padding()
             }
+            .onDelete(perform: delete)
         }
         .navigationBarTitle(Text("Goods"))
         .onAppear(perform: loadData)
@@ -44,6 +45,27 @@ struct GoodsView: View {
             let goodResponse = try! JSONDecoder().decode(GoodsResponse.self, from: response.data!)
             
             self.items = goodResponse.response
+        }
+    }
+
+    func delete(at offsets: IndexSet) {
+        let item = items[offsets.max()!]
+        
+        let token = self.sharedDefaults!.string(forKey: "token")!
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token)"
+        ]
+
+        Alamofire.request("http://api.mirrors-photo.ru/good/\(item.id)/delete", headers: headers).responseJSON { (response) in
+            switch response.result {
+            case .failure(_):
+                return
+            case .success(_):
+                print("")
+            }
+
+            self.items.remove(atOffsets: offsets)
         }
     }
 }
