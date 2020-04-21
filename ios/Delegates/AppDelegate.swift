@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         SwURL.setImageCache(type: .persistent)
         
-        PushNotification.register()
+        if !UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            PushNotification.register()
+        }
         
         return true
     }

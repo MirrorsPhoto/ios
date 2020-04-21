@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1120"
+   LastUpgradeVersion = "1140"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "321BE66E2381D0B6008750A9"
-               BuildableName = "widget.appex"
-               BlueprintName = "widget"
+               BlueprintIdentifier = "328466D623DF6E1B00030B47"
+               BuildableName = "notification.appex"
+               BlueprintName = "notification"
                ReferencedContainer = "container:ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

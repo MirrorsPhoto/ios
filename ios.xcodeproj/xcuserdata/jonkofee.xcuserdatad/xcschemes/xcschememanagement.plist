@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>UITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>ios.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,7 +17,7 @@
 		<key>notification.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>7</integer>
 		</dict>
 		<key>watch.xcscheme_^#shared#^_</key>
 		<dict>
@@ -28,6 +33,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>321BE66E2381D0B6008750A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3246B812244E26A0009E46FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>328466D623DF6E1B00030B47</key>
 		<dict>
 			<key>primary</key>
 			<true/>
