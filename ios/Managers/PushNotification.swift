@@ -22,6 +22,10 @@ class PushNotification {
     static let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
     
     static func register() {
+        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            return
+        }
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
             (granted, error) in
             guard granted else { return }
