@@ -28,10 +28,12 @@ struct AuthView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .textContentType(UITextContentType.username)
+                    .accessibility(identifier: "login")
                 SecureField("Password", text: $password)
                     .keyboardType(UIKeyboardType.alphabet)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(UITextContentType.password)
+                    .accessibility(identifier: "password")
                 Button(action: {
                     self.signIn()
                 }) {
@@ -40,6 +42,7 @@ struct AuthView: View {
                         
                 }
                     .disabled(login.isEmpty || password.isEmpty)
+                    .accessibility(identifier: "sign_in")
                 Spacer()
                 SignInWithAppleButton(sessionManager: sessionManager, showingAlert: $showingAlert, alertText: $alertText)
                     .frame(width: 200, height: 50)

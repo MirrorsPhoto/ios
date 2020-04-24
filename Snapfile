@@ -3,11 +3,10 @@ devices([
   "iPad Pro (11-inch) (2nd generation)",
   "iPad Pro (12.9-inch) (2nd generation)",
   "iPad Pro (10.5-inch)",
-  "iPad Pro (9.7-inch)",
-  "iPhone SE (1st generation)",
+#  "iPad Pro (9.7-inch)",
+#  "iPhone SE (1st generation)",
   "iPhone SE (2nd generation)",
   "iPhone 8 Plus",
-  "iPhone 11",
   "iPhone 11 Pro",
   "iPhone 11 Pro Max"
 ])
