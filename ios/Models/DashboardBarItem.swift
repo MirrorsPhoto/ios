@@ -34,8 +34,14 @@ class DashboardBarItem: Identifiable {
         case "copy":
             color = .green
             iconName = "doc.on.doc"
-        default:
+        case "document":
             color = .pink
+            iconName = "doc.plaintext"
+        case "printing":
+            color = .yellow
+            iconName = "printer"
+        default:
+            color = .orange
             iconName = "xmark.seal"
         }
         

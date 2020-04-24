@@ -164,7 +164,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     bar = serviceBar
                     icon = serviceIcon
                 default:
-                    break
+                    continue
             }
             
             let percent: Double = sum != 0 ? viewMultiplier * Double(value) / sum : 0.0
