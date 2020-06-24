@@ -19,6 +19,7 @@ struct DashboardItemView: View {
     
     var body: some View {
         HStack(alignment: .center) {
+            Spacer()
             Image(systemName: self.iconName)
                 .foregroundColor(.accentColor)
                 .font(.system(size: 48))
@@ -31,7 +32,9 @@ struct DashboardItemView: View {
                     .bold()
             }
             Spacer()
-        }.padding()
+        }
+        .padding()
+        .frame(height: 80)
     }
 }
 

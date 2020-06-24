@@ -40,8 +40,8 @@ struct DashboardView: View {
         NavigationView {
             ScrollView {
                 HStack {
-                    DashboardItemView(iconName: "rublesign.square", label: "Cash", value: self.sessionManager.todaySummary.cash.today.total, formatter: Helper.formatCurrency)
-                    DashboardItemView(iconName: "person.crop.square", label: "Client", value: self.sessionManager.todaySummary.client.today, formatter: Helper.localizedClientCount)
+                    CashView(value: self.sessionManager.todaySummary.cash.today.total)
+                    ClientView(value: self.sessionManager.todaySummary.client.today)
                 }
                 VStack(alignment: .leading) {
                     ForEach(self.bars) { bar in

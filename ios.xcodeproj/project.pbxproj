@@ -22,13 +22,22 @@
 		326F78E424A365BE007C78C4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326F78E324A365BE007C78C4 /* WidgetKit.framework */; };
 		326F78E624A365BE007C78C4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326F78E524A365BE007C78C4 /* SwiftUI.framework */; };
 		326F78E924A365BE007C78C4 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F78E824A365BE007C78C4 /* widget.swift */; };
-		326F78EB24A365C2007C78C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326F78EA24A365C2007C78C4 /* Assets.xcassets */; };
 		326F78EF24A365C2007C78C4 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 326F78E224A365BE007C78C4 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		326F78F624A369BD007C78C4 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F78F524A369BD007C78C4 /* RoundedCornerView.swift */; };
+		326F78FB24A3792B007C78C4 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F78F824A3789F007C78C4 /* Today.swift */; };
 		326FC79F2444CC1A008B5F3A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC79E2444CC1A008B5F3A /* DashboardView.swift */; };
 		326FC7A12444CFF5008B5F3A /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7A02444CFF5008B5F3A /* UserDetailView.swift */; };
 		326FC7A82444F9CC008B5F3A /* GoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7A72444F9CC008B5F3A /* GoodsView.swift */; };
 		326FC7A92444FE74008B5F3A /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329CC0BA23F309CB0002B45F /* Goods.swift */; };
 		326FC7AB2444FEC8008B5F3A /* GoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7AA2444FEC8008B5F3A /* GoodView.swift */; };
+		3284120924A3863300192DE9 /* CashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284120824A3863300192DE9 /* CashView.swift */; };
+		3284120A24A3863300192DE9 /* CashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284120824A3863300192DE9 /* CashView.swift */; };
+		3284120B24A3871B00192DE9 /* DashboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292D25D2417E57400BD7AC9 /* DashboardItemView.swift */; };
+		3284120C24A3872700192DE9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F70EF1238734A3009ED468 /* Helper.swift */; };
+		3284120D24A3878D00192DE9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
+		3284120F24A391FD00192DE9 /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284120E24A391FD00192DE9 /* ClientView.swift */; };
+		3284121024A391FD00192DE9 /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284120E24A391FD00192DE9 /* ClientView.swift */; };
+		3284121124A392F300192DE9 /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
 		328466D023DE3CD700030B47 /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
 		328466D123DE3E5700030B47 /* TodaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328466CF23DE3CD700030B47 /* TodaySummary.swift */; };
 		328466D923DF6E1C00030B47 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328466D823DF6E1B00030B47 /* UserNotifications.framework */; };
@@ -178,12 +187,15 @@
 		326F78E324A365BE007C78C4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		326F78E524A365BE007C78C4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		326F78E824A365BE007C78C4 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
-		326F78EA24A365C2007C78C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		326F78EC24A365C2007C78C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		326F78F524A369BD007C78C4 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		326F78F824A3789F007C78C4 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		326FC79E2444CC1A008B5F3A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		326FC7A02444CFF5008B5F3A /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		326FC7A72444F9CC008B5F3A /* GoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsView.swift; sourceTree = "<group>"; };
 		326FC7AA2444FEC8008B5F3A /* GoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodView.swift; sourceTree = "<group>"; };
+		3284120824A3863300192DE9 /* CashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashView.swift; sourceTree = "<group>"; };
+		3284120E24A391FD00192DE9 /* ClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientView.swift; sourceTree = "<group>"; };
 		328466CF23DE3CD700030B47 /* TodaySummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySummary.swift; sourceTree = "<group>"; };
 		328466D723DF6E1B00030B47 /* notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		328466D823DF6E1B00030B47 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -307,11 +319,19 @@
 		326F78E724A365BE007C78C4 /* widget */ = {
 			isa = PBXGroup;
 			children = (
+				326F78F724A37888007C78C4 /* Widgets */,
 				326F78E824A365BE007C78C4 /* widget.swift */,
-				326F78EA24A365C2007C78C4 /* Assets.xcassets */,
 				326F78EC24A365C2007C78C4 /* Info.plist */,
 			);
 			path = widget;
+			sourceTree = "<group>";
+		};
+		326F78F724A37888007C78C4 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				326F78F824A3789F007C78C4 /* Today.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 		326FC7A62444F9B4008B5F3A /* Goods */ = {
@@ -330,6 +350,7 @@
 				328466DD23DF6E1C00030B47 /* NotificationViewController.swift */,
 				328466DF23DF6E1C00030B47 /* MainInterface.storyboard */,
 				328466E223DF6E1C00030B47 /* Info.plist */,
+				326F78F524A369BD007C78C4 /* RoundedCornerView.swift */,
 			);
 			path = notification;
 			sourceTree = "<group>";
@@ -400,6 +421,8 @@
 				321D3081237F2E66003780D6 /* UserDetailView.swift */,
 				3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */,
 				3223079623A6AFD5008CDE0B /* ContinueWithAppleButton.swift */,
+				3284120824A3863300192DE9 /* CashView.swift */,
+				3284120E24A391FD00192DE9 /* ClientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -677,7 +700,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				326F78EB24A365C2007C78C4 /* Assets.xcassets in Resources */,
+				3284120D24A3878D00192DE9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,7 +759,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3284120B24A3871B00192DE9 /* DashboardItemView.swift in Sources */,
 				326F78E924A365BE007C78C4 /* widget.swift in Sources */,
+				3284121124A392F300192DE9 /* TodaySummary.swift in Sources */,
+				3284120C24A3872700192DE9 /* Helper.swift in Sources */,
+				3284120A24A3863300192DE9 /* CashView.swift in Sources */,
+				326F78FB24A3792B007C78C4 /* Today.swift in Sources */,
+				3284121024A391FD00192DE9 /* ClientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +776,7 @@
 				32F30EFF23E463E10025C296 /* TodaySummary.swift in Sources */,
 				328466DE23DF6E1C00030B47 /* NotificationViewController.swift in Sources */,
 				328466EA23DF851A00030B47 /* Helper.swift in Sources */,
+				326F78F624A369BD007C78C4 /* RoundedCornerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +789,7 @@
 				329D26E2237DDD2700751025 /* AppDelegate.swift in Sources */,
 				32C026AD23F6D3C2007E7427 /* GoodAddView.swift in Sources */,
 				329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */,
+				3284120F24A391FD00192DE9 /* ClientView.swift in Sources */,
 				32EA7F1423A2957200C7625D /* MainView.swift in Sources */,
 				32F70EF2238734A3009ED468 /* Helper.swift in Sources */,
 				3269E85523A4060C002E4724 /* SignInWithAppleButton.swift in Sources */,
@@ -768,6 +799,7 @@
 				328466D023DE3CD700030B47 /* TodaySummary.swift in Sources */,
 				321D3082237F2E66003780D6 /* UserDetailView.swift in Sources */,
 				3223079723A6AFD5008CDE0B /* ContinueWithAppleButton.swift in Sources */,
+				3284120924A3863300192DE9 /* CashView.swift in Sources */,
 				3292D2602417F7A100BD7AC9 /* DashboardBarItemView.swift in Sources */,
 				32C8CACD23F17701000DCB48 /* DashboardView.swift in Sources */,
 				32EA7F1D23A2BE3000C7625D /* WebSocketConnection.swift in Sources */,
