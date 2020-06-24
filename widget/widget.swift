@@ -16,3 +16,9 @@ struct widgets: WidgetBundle {
         TodayWidget()
     }
 }
+
+struct AuthView : View {
+    var body: some View {
+        Text("Sign In")
+    }
+}

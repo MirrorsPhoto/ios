@@ -43,14 +43,21 @@ struct PlaceholderView : View {
 
 struct entryView : View {
     @Environment(\.widgetFamily) var family: WidgetFamily
+    
     var entry: Entry
+    
+    let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
 
     @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemSmall: SmallWidget(entry: entry)
-        case .systemMedium: MediumWidget(entry: entry)
-        case .systemLarge: SmallWidget(entry: entry)
+        if self.sharedDefaults!.string(forKey: "token") == nil {
+            AuthView()
+        } else {
+            switch family {
+            case .systemSmall: SmallWidget(entry: entry)
+            case .systemMedium: MediumWidget(entry: entry)
+            case .systemLarge: SmallWidget(entry: entry)
+            }
         }
     }
 }
