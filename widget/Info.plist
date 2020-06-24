@@ -25,5 +25,19 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widgetkit-extension</string>
 	</dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api.mirrors-photo.ru</key>
+			<string></string>
+			<key>mirrors-photo.ru</key>
+			<string></string>
+			<key>socket.mirrors-photo.ru</key>
+			<string></string>
+		</dict>
+	</dict>
 </dict>
 </plist>

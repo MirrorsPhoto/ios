@@ -14,6 +14,7 @@
 		3223079723A6AFD5008CDE0B /* ContinueWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223079623A6AFD5008CDE0B /* ContinueWithAppleButton.swift */; };
 		3232044A244CDAAD00A16E4A /* BarcodeView in Frameworks */ = {isa = PBXBuildFile; productRef = 32320449244CDAAD00A16E4A /* BarcodeView */; };
 		3232044C244CE73100A16E4A /* GoodBarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3232044B244CE73100A16E4A /* GoodBarcodeView.swift */; };
+		3232D6C024A3A47300E3F1C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3232D6BF24A3A47300E3F1C3 /* Alamofire */; };
 		3246B816244E26A0009E46FF /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246B815244E26A0009E46FF /* UITests.swift */; };
 		3246B81E244E2975009E46FF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246B81D244E2975009E46FF /* SnapshotHelper.swift */; };
 		324D7CBA244F49DB0092B974 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 324D7CB9244F49DB0092B974 /* Snapfile */; };
@@ -254,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3232D6C024A3A47300E3F1C3 /* Alamofire in Frameworks */,
 				326F78E624A365BE007C78C4 /* SwiftUI.framework in Frameworks */,
 				326F78E424A365BE007C78C4 /* WidgetKit.framework in Frameworks */,
 			);
@@ -370,12 +372,12 @@
 		329D26D5237DDD2600751025 = {
 			isa = PBXGroup;
 			children = (
+				326F78E724A365BE007C78C4 /* widget */,
 				329D26E0237DDD2700751025 /* ios */,
 				32EA7ED723A2847200C7625D /* watch */,
 				32EA7EE623A2847900C7625D /* watch Extension */,
 				328466DC23DF6E1C00030B47 /* notification */,
 				3246B814244E26A0009E46FF /* UITests */,
-				326F78E724A365BE007C78C4 /* widget */,
 				329D26DF237DDD2700751025 /* Products */,
 				31D49B8D306EA19DCD180C1F /* Frameworks */,
 				324D7CB9244F49DB0092B974 /* Snapfile */,
@@ -539,6 +541,9 @@
 			dependencies = (
 			);
 			name = widgetExtension;
+			packageProductDependencies = (
+				3232D6BF24A3A47300E3F1C3 /* Alamofire */,
+			);
 			productName = widgetExtension;
 			productReference = 326F78E224A365BE007C78C4 /* widgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1464,6 +1469,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 321F994A241AE2EA00E0E864 /* XCRemoteSwiftPackageReference "BarcodeView" */;
 			productName = BarcodeView;
+		};
+		3232D6BF24A3A47300E3F1C3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32935E3723A27A1C00817678 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		32935E3823A27A1C00817678 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

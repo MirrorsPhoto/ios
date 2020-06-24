@@ -8,6 +8,7 @@
 
 import WidgetKit
 import SwiftUI
+import Alamofire
 
 struct TodayWidget: Widget {
     private let kind: String = "today"
@@ -50,7 +51,9 @@ struct entryView : View {
 
     @ViewBuilder
     var body: some View {
-        if self.sharedDefaults!.string(forKey: "token") == nil {
+        let token = self.sharedDefaults!.string(forKey: "token")
+        
+        if token == nil {
             AuthView()
         } else {
             switch family {
@@ -82,19 +85,35 @@ struct MediumWidget : View {
 }
 
 struct Provider: TimelineProvider {
+    let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
+    
     public func snapshot(with context: Context, completion: @escaping (Entry) -> ()) {
         let entry = Entry(date: Date(), summary: TodaySummary(cash: Cash(today: Today(total: 420)), client: Client(today: 36)))
         completion(entry)
     }
 
-    public func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    public func timeline(with context: Context, completion: @escaping (WidgetKit.Timeline<Entry>) -> ()) {
         var entries: [Entry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
+//        let token = self.sharedDefaults!.string(forKey: "token")
+        
         for minuteOffset in 0 ..< 2 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
-            let entry = Entry(date: entryDate, summary: TodaySummary(cash: Cash(today: Today(total: 420)), client: Client(today: 36)))
+            var entryData = TodaySummary()
+            
+//            if token != nil {
+//                let headers: HTTPHeaders = [
+//                    "Authorization": "Bearer \(token!)"
+//                ]
+//
+//                Alamofire.request("http://api.mirrors-photo.ru/sale/today", headers: headers).responseJSON { (response) in
+//                    let todayResponse = try! JSONDecoder().decode(TodayResponse.self, from: response.data!)
+//
+//                    entryData = todayResponse.response
+//                }
+//            }
+            
+            let entry = Entry(date: entryDate, summary: entryData)
             entries.append(entry)
         }
 
