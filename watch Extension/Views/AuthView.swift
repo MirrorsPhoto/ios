@@ -33,7 +33,7 @@ struct AuthView: View {
                     
             }
             .disabled(login.isEmpty || password.isEmpty)
-            SignInWithAppleButton(sessionManager: sessionManager, showingAlert: $showingAlert, alertText: $alertText)
+            SignInWithAppleButtonView(sessionManager: sessionManager, showingAlert: $showingAlert, alertText: $alertText)
         }
         .navigationBarTitle(Text("Authorization"))
         .alert(isPresented: $showingAlert) {

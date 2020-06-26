@@ -1,5 +1,5 @@
 //
-//  SignInWithAppleButton.swift
+//  SignInWithAppleButtonView.swift
 //  watch Extension
 //
 //  Created by Сергей Прищенко on 12.04.2020.
@@ -9,30 +9,30 @@
 import SwiftUI
 import AuthenticationServices
 
-struct SignInWithAppleButton: WKInterfaceObjectRepresentable {
+struct SignInWithAppleButtonView: WKInterfaceObjectRepresentable {
     
     @ObservedObject var sessionManager: SessionManager
     
     @Binding var showingAlert: Bool
     @Binding var alertText: String
     
-    typealias WKInterfaceObjectRepresentable = WKInterfaceObjectRepresentableContext<SignInWithAppleButton>
+    typealias WKInterfaceObjectRepresentable = WKInterfaceObjectRepresentableContext<SignInWithAppleButtonView>
 
-    func updateWKInterfaceObject(_ wkInterfaceObject: WKInterfaceAuthorizationAppleIDButton, context: WKInterfaceObjectRepresentableContext<SignInWithAppleButton>) {}
+    func updateWKInterfaceObject(_ wkInterfaceObject: WKInterfaceAuthorizationAppleIDButton, context: WKInterfaceObjectRepresentableContext<SignInWithAppleButtonView>) {}
 
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
 
-    func makeWKInterfaceObject(context: WKInterfaceObjectRepresentableContext<SignInWithAppleButton>) -> WKInterfaceAuthorizationAppleIDButton {
+    func makeWKInterfaceObject(context: WKInterfaceObjectRepresentableContext<SignInWithAppleButtonView>) -> WKInterfaceAuthorizationAppleIDButton {
         return WKInterfaceAuthorizationAppleIDButton(target: context.coordinator, action: #selector(Coordinator.buttonPressed))
     }
 
     class Coordinator: NSObject, ASAuthorizationControllerDelegate {
 
-        let parent: SignInWithAppleButton
+        let parent: SignInWithAppleButtonView
 
-        init(_ parent: SignInWithAppleButton) {
+        init(_ parent: SignInWithAppleButtonView) {
           self.parent = parent
           
           super.init()
