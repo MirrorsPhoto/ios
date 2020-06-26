@@ -44,3 +44,6 @@ For the amount %@";
 "Add good" = "Add good";
 "Edit good" = "Edit good";
 "Detail good" = "Good";
+
+"Today widget title" = "Today";
+"Today widget description" = "See the current statistic as proceeds and client count";

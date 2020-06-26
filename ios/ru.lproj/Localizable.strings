@@ -44,3 +44,6 @@
 "Add good" = "Добавление товара";
 "Edit good" = "Редактирование";
 "Detail good" = "Товар";
+
+"Today widget title" = "Сегодня";
+"Today widget description" = "Смотрите текущую статистику по выручке и количеству клиентов";
