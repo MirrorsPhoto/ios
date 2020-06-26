@@ -19,6 +19,6 @@ struct widgets: WidgetBundle {
 
 struct AuthView : View {
     var body: some View {
-        Text("Sign In")
+        Text("Sign in")
     }
 }
