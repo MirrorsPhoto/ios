@@ -17,16 +17,15 @@ struct TodayWidget: Widget {
         StaticConfiguration(
             kind: kind,
             provider: Provider(),
-            placeholder: PlaceholderView()
+            placeholder: entryView()
         ) { entry in
                 entryView(entry: entry)
         }
-        .configurationDisplayName("Today Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Today widget title")
+        .description("Today widget description")
         .supportedFamilies([
             .systemSmall,
             .systemMedium,
-//            .systemLarge,
         ])
     }
 }
@@ -36,16 +35,10 @@ struct Entry: TimelineEntry {
     let summary: TodaySummary
 }
 
-struct PlaceholderView : View {
-    var body: some View {
-        Text("Placeholder View")
-    }
-}
-
 struct entryView : View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     
-    var entry: Entry
+    var entry = Entry(date: Date(), summary: TodaySummary(cash: Cash(today: Today(total: 420)), client: Client(today: 36)))
     
     let sharedDefaults = UserDefaults.init(suiteName: "group.com.mirrors.ios.widget.data")
 
