@@ -22,7 +22,7 @@
 		3246B81E244E2975009E46FF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246B81D244E2975009E46FF /* SnapshotHelper.swift */; };
 		324D7CBA244F49DB0092B974 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 324D7CB9244F49DB0092B974 /* Snapfile */; };
 		325622682382A39E006FEABF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3256226A2382A39E006FEABF /* Localizable.strings */; };
-		3269E85523A4060C002E4724 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */; };
+		326E2AC824A631B00093217C /* SignInWithAppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E2AC724A631B00093217C /* SignInWithAppleButtonView.swift */; };
 		326FC79F2444CC1A008B5F3A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC79E2444CC1A008B5F3A /* DashboardView.swift */; };
 		326FC7A12444CFF5008B5F3A /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7A02444CFF5008B5F3A /* UserDetailView.swift */; };
 		326FC7A82444F9CC008B5F3A /* GoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FC7A72444F9CC008B5F3A /* GoodsView.swift */; };
@@ -183,7 +183,7 @@
 		325622692382A39E006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3256226B2382A3B5006FEABF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32562293238334C3006FEABF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
+		326E2AC724A631B00093217C /* SignInWithAppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonView.swift; sourceTree = "<group>"; };
 		326FC79E2444CC1A008B5F3A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		326FC7A02444CFF5008B5F3A /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		326FC7A72444F9CC008B5F3A /* GoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsView.swift; sourceTree = "<group>"; };
@@ -403,8 +403,8 @@
 				329D26F7237DDDB200751025 /* AuthView.swift */,
 				329D26F9237DDDC600751025 /* MainView.swift */,
 				321D3081237F2E66003780D6 /* UserDetailView.swift */,
-				3269E85423A4060C002E4724 /* SignInWithAppleButton.swift */,
 				3223079623A6AFD5008CDE0B /* ContinueWithAppleButton.swift */,
+				326E2AC724A631B00093217C /* SignInWithAppleButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -774,7 +774,7 @@
 				329D26E4237DDD2700751025 /* SceneDelegate.swift in Sources */,
 				32EA7F1423A2957200C7625D /* MainView.swift in Sources */,
 				32F70EF2238734A3009ED468 /* Helper.swift in Sources */,
-				3269E85523A4060C002E4724 /* SignInWithAppleButton.swift in Sources */,
+				326E2AC824A631B00093217C /* SignInWithAppleButtonView.swift in Sources */,
 				329D26FD237DDDF900751025 /* SessionManager.swift in Sources */,
 				329CC0BD23F313C60002B45F /* GoodView.swift in Sources */,
 				329D26F8237DDDB200751025 /* AuthView.swift in Sources */,
@@ -1180,7 +1180,7 @@
 				DEVELOPMENT_TEAM = M85FTR22CA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = "${IPHONEOS_DEPLOYMENT_TARGET}";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1207,7 +1207,7 @@
 				DEVELOPMENT_TEAM = M85FTR22CA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = "${IPHONEOS_DEPLOYMENT_TARGET}";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

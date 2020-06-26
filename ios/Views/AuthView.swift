@@ -44,7 +44,7 @@ struct AuthView: View {
                     .disabled(login.isEmpty || password.isEmpty)
                     .accessibility(identifier: "sign_in")
                 Spacer()
-                SignInWithAppleButton(sessionManager: sessionManager, showingAlert: $showingAlert, alertText: $alertText)
+                SignInWithAppleButtonView(sessionManager: sessionManager)
                     .frame(width: 200, height: 50)
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("OK")))
